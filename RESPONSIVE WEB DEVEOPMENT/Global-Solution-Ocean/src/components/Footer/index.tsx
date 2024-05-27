@@ -2,12 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import './footer_style.css';
-
-interface FooterProps {
-    // Adicione aqui quaisquer props que você possa precisar
-}
   
-const Footer: React.FC<FooterProps> = () => {
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">

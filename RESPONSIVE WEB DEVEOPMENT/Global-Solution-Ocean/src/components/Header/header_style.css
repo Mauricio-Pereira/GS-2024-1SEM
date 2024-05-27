@@ -1,35 +1,21 @@
 .header {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+    max-width: 1200px;
+    margin: auto;
 }
-  
-.logo-container img {
-    height: 50px; /* Ajuste conforme necessário */
-}
-  
-.navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
+.header .navigation .links{
     display: flex;
-}
-  
-.navigation li {
-    margin-left: 20px;
-}
-  
-.search-bar input[type="text"] {
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    color: #333;
-}
-  
-.menu-toggle {
-    cursor: pointer;
-    font-size: 18px;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 20rem;
 }

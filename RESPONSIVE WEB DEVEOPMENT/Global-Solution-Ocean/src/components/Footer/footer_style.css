@@ -1,48 +1,12 @@
-/* Estilo do rodapé modificado */
 .footer {
-    position: fixed; /* Fixa o rodapé na posição especificada */
-    bottom: 0; /* Posiciona o rodapé na parte inferior da janela de visualização */
     background-color: #333;
     color: white;
-    padding: 40px 0;
-    width: 100%; /* Certifica-se de que o rodapé ocupe toda a largura disponível */
+    padding: 3rem 0;
+    width: 100%;
 }
   
-/* Outros estilos não modificados */
 .container {
     max-width: 1200px;
     margin: auto;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-  
-.col {
-    width: calc(33.33% - 10px);
-}
-  
-h2 {
-    margin-top: 0;
-}
-  
-ul {
-    list-style: none;
-    padding: 0;
-}
-  
-li {
-    margin-bottom: 10px;
-}
-  
-a {
-    color: white;
-    text-decoration: none;
-}
-  
-.fab {
-    margin-right: 5px;
 }
   
