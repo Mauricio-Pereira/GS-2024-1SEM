@@ -121,6 +121,7 @@ SELECT UPPER(name) AS upper_name, phone FROM gs_ngos;
 -- Relatório 3.2: Converte os nomes das empresas para maiúsculas e lista juntamente com o site
 SELECT UPPER(name) AS upper_name, website FROM gs_companies;
 
+
 -- Relatório 4.1: Extrai o ano de criação das empresas e lista juntamente com o nome
 SELECT EXTRACT(YEAR FROM created_at) AS year_created, name 
 FROM gs_companies;
@@ -140,6 +141,7 @@ SELECT company_id, SUM(price) AS total_price
 FROM gs_products
 GROUP BY company_id;
 
+
 -- Relatório 6.1: Lista o número do pedido, email do comprador e valor total da compra, usando junção de equivalência entre gs_orders e gs_users
 SELECT o.order_number, u.email, o.total_amount
 FROM gs_orders o
@@ -149,6 +151,7 @@ JOIN gs_users u ON o.buyer_id = u.user_id;
 SELECT p.name AS product_name, c.name AS company_name, p.stock
 FROM gs_products p
 JOIN gs_companies c ON p.company_id = c.company_id;
+
 
 -- Relatório 7.1: Lista os produtos que não têm correspondência na tabela gs_orderitems (produtos que não foram vendidos)
 SELECT p.name AS product_name, p.price
