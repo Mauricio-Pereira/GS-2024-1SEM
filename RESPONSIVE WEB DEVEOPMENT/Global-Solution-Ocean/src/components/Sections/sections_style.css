@@ -1,0 +1,23 @@
+.section{
+    display: flex;
+    width: 100%;
+}
+
+/*ParagraphSection*/
+
+.paragraph-section{
+    background-color: red;
+    padding: 2rem 0;
+}
+
+.paragraph-section > div{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*HeaderSection*/
+
+.header-section{
+    background-color: blue;
+    height: 3rem;
+}

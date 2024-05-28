@@ -13,9 +13,14 @@
     margin: auto;
 }
 
-.header .navigation .links{
+.header .container .navigation .links{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 20rem;
+    width: 25rem;
+}
+
+.header .container .user-info{
+    display: flex;
+    flex-direction: column;
 }

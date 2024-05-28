@@ -22,6 +22,10 @@ body {
   min-height: 100vh;
 }
 
+main{
+  flex-direction: column;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
