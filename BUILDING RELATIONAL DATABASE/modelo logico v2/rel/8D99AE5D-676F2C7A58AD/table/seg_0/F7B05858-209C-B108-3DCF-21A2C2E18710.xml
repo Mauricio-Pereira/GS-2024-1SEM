@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F7B05858-209C-B108-3DCF-21A2C2E18710" schemaObject="A8EB0AD7-100A-074B-701B-E3CF101E51FE" name="GS_DONATIONS">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM553748</sourceObjSchema>
+<sourceObjName>GS_DONATIONS</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:36 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>D2DCDDC2-A85C-6ED5-914D-99DBAF095F86</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DONATION_ID" id="0229CF00-EE69-1536-BCE6-7FFB004616AE">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>GS_DONATIONS</sourceObjSchema>
+<sourceObjName>DONATION_ID</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>2895A713-F6AA-C97F-F345-52BDCA625AD6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ORDER_ID" id="9A3E6184-5C33-F94C-4DB4-4A8955F23CBF">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>GS_DONATIONS</sourceObjSchema>
+<sourceObjName>ORDER_ID</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>B201185D-45C7-BC14-1CBC-6177C5167A3E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E144A48-1085-B232-6FC8-8827505DA552" referredColumn="3F842633-2C2A-4B6A-1514-9E8FEC2FA555"/>
+</associations>
+</Column>
+<Column name="AMOUNT" id="70951542-99DB-8D01-2BE1-288B3B7E0554">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>GS_DONATIONS</sourceObjSchema>
+<sourceObjName>AMOUNT</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>09E5685A-3CA3-35AC-5A60-ACB9D5AF2DAE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NGO_ID" id="AEC61418-3AEA-57F7-9455-E9E73F05880D">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>GS_DONATIONS</sourceObjSchema>
+<sourceObjName>NGO_ID</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>64322F1D-CA4E-0D27-ADF1-05945173C1D5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E998DFFD-5660-4867-4C6F-33B2CF10B18C" referredColumn="F5C56E02-3880-42E0-16CF-12556326E09E"/>
+</associations>
+</Column>
+<Column name="CREATED_AT" id="5EF5D185-24C9-D95A-EA76-BEDF157F6297">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>GS_DONATIONS</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>870CD11C-3E3B-89C4-63B9-96D454EC8326</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="498099B6-BF7D-1AF0-3A58-ECAABF02A3DF">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>GS_DONATIONS</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>209E7F46-AEF3-FDA0-CD9F-C6C4BAF248EC</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="297B7241-4185-083E-D90E-D35F9FF172B0" schemaObject="A8EB0AD7-100A-074B-701B-E3CF101E51FE" name="GS_DONATIONS_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM553748</sourceObjSchema>
+<sourceObjName>SYS_C002345110</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>6B9F0C83-CFA5-C074-C2BB-55BFA83EDD8E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0229CF00-EE69-1536-BCE6-7FFB004616AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A8908E83-524C-A373-545C-4A1B6E6CF6F1" name="FK_NGO_ID_DONATIONS">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEC61418-3AEA-57F7-9455-E9E73F05880D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13506043-0BDE-9EE8-F4D1-404D4E635A5F" name="FK_ORDER_ID_DONATIONS">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A3E6184-5C33-F94C-4DB4-4A8955F23CBF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

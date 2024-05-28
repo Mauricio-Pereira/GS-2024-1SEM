@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C157FC47-2F28-E4CC-1586-5A1D64A809F0" containerWithKeyObject="52CB7697-4F27-02E9-A418-A5835DC40AA5" localFKIndex="F09FCE63-8E57-F009-1180-6F29C6C4ADE9" name="FK_CONTACT_ID_NGOS">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM553748</sourceObjSchema>
+<sourceObjName>FK_CONTACT_ID_NGOS</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>2F8EB652-F812-3D4B-490E-4869A6D0F2BA</importedID>
+<referredTableLongName>RM553748.GS_USERS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>739B02D9-AD98-B48B-A502-D199412A2126</referredTableID>
+<keyObject>E75B5D3B-D099-7C7A-56FD-C0C522B1F092</keyObject>
+<referredKeyID>E75B5D3B-D099-7C7A-56FD-C0C522B1F092</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>USER_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

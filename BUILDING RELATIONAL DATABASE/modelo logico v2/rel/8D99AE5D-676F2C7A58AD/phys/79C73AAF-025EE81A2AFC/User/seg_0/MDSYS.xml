@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="MDSYS" directorySegmentName="seg_0" id="MDSYS">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjName>MDSYS</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:19:52 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>25BCCDC3-61AD-9D4B-F66B-411A82A0AA29</schemaObject>
+<nullInstance>true</nullInstance>
+<storableNullInstance>true</storableNullInstance>
+<privileges>INHERIT ANY PRIVILEGES, MANAGE SCHEDULER, CREATE JOB, CREATE SEQUENCE, DROP PUBLIC SYNONYM, CREATE PROCEDURE, CREATE PUBLIC SYNONYM, CREATE VIEW, CREATE INDEXTYPE, CREATE LIBRARY, EXEMPT ACCESS POLICY, CREATE OPERATOR, CREATE TYPE, CREATE TRIGGER, ADMINISTER DATABASE TRIGGER, CREATE ANY SEQUENCE, CREATE TABLE</privileges>
+<profile>DEFAULT</profile>
+<quotaItems>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem1" id="160938B5-C1D3-9E57-5A1E-95AA108F14C7">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</QuotaItem>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem2" id="61B9C850-9D3B-856B-0036-5EE1234C2043">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</QuotaItem>
+</quotaItems>
+</UserOraclev10g>

@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelo logico v2" id="1CCB34CF-CBC6-5575-38E7-C96910BF407B" version="3.5">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:00:26 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>1CCB34CF-CBC6-5575-38E7-C96910BF407B</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="B105AFF6-9007-807A-860B-D0FFA7CA741A">
+<designStoragePath>C:\Fiap</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="075D7E9A-7517-938C-D1B3-31C64607AD3F">
+<designStoragePath>C:\Fiap</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="F43A2BBF-7D96-08D4-B96E-E64D0327E397">
+<designStoragePath>C:\modeler</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="81B37B12-0598-48D1-8919-CDF9DBC50A59">
+<designStoragePath>C:\modeler</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="1B8C188A-3A08-1D1D-3171-C3117BA78D8D">
+<designStoragePath>C:\modeler</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="C92B8821-F6C1-8B7C-7E40-C2032422920A">
+<designStoragePath>C:\</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="110E68CE-CDFE-0AEB-4B83-ECCEA8B3E801">
+<designStoragePath>C:\Users\Mauricio\AppData\Local\Temp</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

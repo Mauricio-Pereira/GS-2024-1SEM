@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6E144A48-1085-B232-6FC8-8827505DA552" containerWithKeyObject="F7B05858-209C-B108-3DCF-21A2C2E18710" localFKIndex="13506043-0BDE-9EE8-F4D1-404D4E635A5F" name="FK_ORDER_ID_DONATIONS">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM553748</sourceObjSchema>
+<sourceObjName>FK_ORDER_ID_DONATIONS</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>E6C288BF-52CF-3DA4-64B5-D2EF64D4E700</importedID>
+<referredTableLongName>RM553748.GS_ORDERS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>63F412A8-D604-730F-9910-96CCF964B5D5</referredTableID>
+<keyObject>FA53FA90-37B3-2866-F20B-EECAED81F3FA</keyObject>
+<referredKeyID>FA53FA90-37B3-2866-F20B-EECAED81F3FA</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ORDER_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="GS_NGOS" directorySegmentName="seg_0" id="52CB7697-4F27-02E9-A418-A5835DC40AA5">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:36 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>37941F2F-9EAC-46F5-69CD-5B8BC2DE43DA</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MISSION" id="03AFE88D-B491-636D-337B-D39A594EEE53">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="6EB8D025-5026-2192-AD56-5D904A9EECD4">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="WEBSITE" id="71D1D2E4-B5B8-23B1-8E18-21E70016E9A6">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PHONE" id="8181687A-FA8E-3C32-1F5A-F8165654CB7C">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="83EFB0B8-B939-06A8-4C88-05013B2A850D">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="87754058-9BCC-E8C6-4F45-0E12A2A9B224">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CONTACT_ID" id="DC1891C9-524D-A820-35B9-D4A75CFF0F28">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CONTACT_EMAIL" id="E0A39BA3-FAD1-B545-FABD-51FEBB095D59">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NGO_ID" id="F5C56E02-3880-42E0-16CF-12556326E09E">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CONTACT_ID_NGOS" id="F09FCE63-8E57-F009-1180-6F29C6C4ADE9">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="GS_NGOS_PK" id="7355A680-1E6F-42EB-3C8A-724CD6E8EBD0">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<segment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<indexSegment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="GS_NGOS_CONTACT_EMAIL_UN" id="6243742D-12A7-489B-4924-D674FA14882D">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<segment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<indexSegment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="GS_NGOS_NAME_UN" id="F89C963C-5200-3FDC-7B14-1B20BE3A2FD5">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<segment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<indexSegment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev12c>
