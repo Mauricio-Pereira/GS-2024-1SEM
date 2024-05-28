@@ -18,7 +18,7 @@ CREATE TABLE gs_users (
     user_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     email VARCHAR2(100) NOT NULL UNIQUE,
     password VARCHAR2(255) NOT NULL,
-    user_type VARCHAR2(20) NOT NULL CHECK (user_type IN ('comprador', 'admin_empresa')),
+    user_type VARCHAR2(20) NOT NULL CHECK (user_type IN ('buyer', 'admin_company', 'admin_ngo')),
     cep VARCHAR2(10) NOT NULL,
     address_number VARCHAR2(10) NOT NULL,
     address_complement VARCHAR2(50),
@@ -161,3 +161,8 @@ BEGIN
     :NEW.updated_at := CURRENT_TIMESTAMP;
 END;
 /
+commit;
+
+
+
+
