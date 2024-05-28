@@ -15,9 +15,9 @@ const Footer = () => {
           <div className="col">
             <h2>Links Úteis</h2>
             <ul>
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
+              <li><Link href="/">Link 1</Link></li>
+              <li><Link href="/">Link 2</Link></li>
+              <li><Link href="/">Link 3</Link></li>
             </ul>
           </div>
           <div className="col">
