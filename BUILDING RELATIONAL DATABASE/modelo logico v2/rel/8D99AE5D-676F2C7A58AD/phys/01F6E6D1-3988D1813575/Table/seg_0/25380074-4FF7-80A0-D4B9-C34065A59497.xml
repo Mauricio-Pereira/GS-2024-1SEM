@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="GS_ORDERITEMS" directorySegmentName="seg_0" id="25380074-4FF7-80A0-D4B9-C34065A59497">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:36 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ORDER_ID" id="0D5DE0B4-0A72-6FF6-7F50-1EAFE1ABDC89">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRICE" id="1B0BF2C7-9B0C-0AF3-CD3F-07AB2A46373A">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="54DAD235-D4CC-BC91-E2A3-06CDBCED9EA5">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="QUANTITY" id="766FF61D-5153-FF74-656A-1286601A832B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_ID" id="AC2B6033-2EC1-BEB5-CF59-5C6E7BE628BE">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="DBA9A5EC-BD30-C49C-3594-F10594FDAB48">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ORDER_ITEM_ID" id="ED0FBBF8-A7E8-1B3F-9DBA-6FF06FC82A5C">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PRODUCT_ID_ORDERITEMS" id="E572E839-353D-8984-A18A-3C5159C6EEF7">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_ORDER_ID_ORDERITEMS" id="ED639327-EB56-5313-B7C8-773B5E6B4D29">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="GS_ORDERITEMS_PK" id="D862218B-86EB-CA98-0B74-2578FFB5E9AA">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

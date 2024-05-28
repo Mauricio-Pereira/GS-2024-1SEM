@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E998DFFD-5660-4867-4C6F-33B2CF10B18C" containerWithKeyObject="F7B05858-209C-B108-3DCF-21A2C2E18710" localFKIndex="A8908E83-524C-A373-545C-4A1B6E6CF6F1" name="FK_NGO_ID_DONATIONS">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM553748</sourceObjSchema>
+<sourceObjName>FK_NGO_ID_DONATIONS</sourceObjName>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<importedID>4CAACBB7-E443-F5AD-C902-2B87D1A28AFC</importedID>
+<referredTableLongName>RM553748.GS_NGOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>52CB7697-4F27-02E9-A418-A5835DC40AA5</referredTableID>
+<keyObject>7355A680-1E6F-42EB-3C8A-724CD6E8EBD0</keyObject>
+<referredKeyID>7355A680-1E6F-42EB-3C8A-724CD6E8EBD0</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>NGO_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

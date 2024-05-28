@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="GS_ORDERS" directorySegmentName="seg_0" id="63F412A8-D604-730F-9910-96CCF964B5D5">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:36 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>37941F2F-9EAC-46F5-69CD-5B8BC2DE43DA</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TOTAL_AMOUNT" id="007BF066-1BC2-9CAE-063E-3B53ECF789EA">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_NUMBER" id="3BA68E51-C73C-BE63-B6CE-EAB75393A943">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_ID" id="3F842633-2C2A-4B6A-1514-9E8FEC2FA555">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="ORDER_STATUS" id="7B02A54D-EB38-91B0-FE00-76424A99BDE4">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="80BE8739-9B5A-8E69-BA32-AF57B96D4FEE">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="BUYER_ID" id="9D1D6B1B-678B-7C3D-4266-D69799466200">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MAINTENANCE_AMOUNT" id="9EB35869-D739-0328-B274-7275F9DABF41">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DONATION_AMOUNT" id="9F139803-2632-ADD2-627F-E3EA73D661B7">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="E4B71871-0D0B-EAF9-082E-AA7B1DDB1A42">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_BUYER_ID_ORDERS" id="4566A734-48B8-EDCD-C084-E4ACC975EE83">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="GS_ORDERS_PK" id="FA53FA90-37B3-2866-F20B-EECAED81F3FA">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<segment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<indexSegment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="GS_ORDERS_ORDER_NUMBER_UN" id="0CF27FCB-5595-037B-2190-FBA526BE4D41">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-05-28 12:32:37 UTC</createdTime>
+<ownerDesignName>modelo logico v2</ownerDesignName>
+<schemaObject>A8EB0AD7-100A-074B-701B-E3CF101E51FE</schemaObject>
+<segment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</segment>
+<tableSpace>0332AC1F-3E89-3A35-D3CB-8B66A69848BD</tableSpace>
+<indexSegment>A2819107-A7C6-A6B5-1A80-EF7A4BC330E9</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev12c>
