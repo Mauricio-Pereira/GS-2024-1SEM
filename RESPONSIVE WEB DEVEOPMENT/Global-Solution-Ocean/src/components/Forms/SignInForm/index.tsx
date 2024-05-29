@@ -50,7 +50,7 @@ const SignInForm: React.FC = () => {
     */
 
     try {
-      const response = await axios.post(`http://localhost:8082/salesforcedirections/cliente-endereco`, {
+      const response = await axios.post(`http://localhost:8082/`, {
         headers: {
           'Content-Type': 'application/json',
         },
