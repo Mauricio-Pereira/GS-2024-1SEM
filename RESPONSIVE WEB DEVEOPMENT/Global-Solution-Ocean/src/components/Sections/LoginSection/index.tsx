@@ -1,11 +1,12 @@
+import LoginForm from '@/components/Forms/LoginForm';
 import '../sections_style.css';
 
 const LoginSection = () => {
     return(
         <>
-        <section className="section products-section">
+        <section className="section login-section">
             <div className="container">
-                Formulário de Login Aqui
+                <LoginForm/>
             </div>
         </section>
         </>

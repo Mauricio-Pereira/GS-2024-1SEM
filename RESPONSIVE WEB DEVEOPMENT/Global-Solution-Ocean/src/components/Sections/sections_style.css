@@ -84,3 +84,18 @@
     max-width: 75rem;
     margin: auto;
 }
+
+/*LoginSection*/
+
+.login-section{
+    padding: 2rem 0rem;
+}
+
+.login-section .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    max-width: 75rem;
+    margin: auto;
+}
