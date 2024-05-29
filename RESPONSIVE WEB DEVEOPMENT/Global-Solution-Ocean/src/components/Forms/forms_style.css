@@ -1,0 +1,26 @@
+.form{
+    background-color: #001718;
+    margin: 0 10rem;
+    padding: 0.5rem;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form form input{
+    margin-bottom: 0.5rem;
+}
+
+.form form .submit-btn{
+    background-color: rgb(69, 134, 134);
+    padding: 0.5rem;
+}
+
+.form form .error-message{
+    font-weight: bold;
+    color: red;
+}
+
+/*SignInForm*/

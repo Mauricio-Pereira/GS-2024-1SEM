@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <img src="/logo.png" alt="Logo da Empresa"/>
+          <img src="/images/logo.png" alt="Logo da Empresa"/>
           <h1>Blue Horizon</h1>
         </div>
         <nav className="navigation">
@@ -16,13 +16,12 @@ const Header = () => {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/products">Produtos</Link></li>
             <li><Link href="/about">Sobre</Link></li>
-            <li><Link href="/services">Serviços</Link></li>
             <li><Link href="/contact">Contato</Link></li>
           </ul>
         </nav>
         <div className="user-info">
-          <Link href="#">Cadastro</Link>
-          <Link href="#">Login</Link>
+          <Link href="/sign-in-page">Cadastre-se</Link>
+          <Link href="/login-page">Login</Link>
         </div>
       </div>
     </header>

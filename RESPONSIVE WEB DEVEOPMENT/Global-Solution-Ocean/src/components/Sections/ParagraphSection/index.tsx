@@ -1,11 +1,11 @@
-import { SectionProps } from "../interface";
+import { ProductsProps} from "./interface";
 import '../sections_style.css';
 
-const ParagraphSection = (props: SectionProps) => {
+const ParagraphSection = (props: ProductsProps) => {
     return(
         <>
         <section className="section paragraph-section">
-            <div className={props.style}>
+            <div className="container">
                 <p>{props.text}</p>
             </div>
         </section>

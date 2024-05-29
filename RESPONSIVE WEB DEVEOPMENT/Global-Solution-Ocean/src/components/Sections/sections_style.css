@@ -1,23 +1,86 @@
+/* ===== Importes: Fontes ===== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 .section{
     display: flex;
     width: 100%;
 }
 
-/*ParagraphSection*/
-
-.paragraph-section{
-    background-color: #fef6df;
-    padding: 2rem 0;
-}
-
-.paragraph-section > div{
-    max-width: 1200px;
-    margin: auto;
-}
-
 /*HeaderSection*/
 
 .header-section{
+    justify-content: center;
     background-color: blue;
-    height: 3rem;
+    padding: 3rem 0;
+}
+
+.header-section .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header-section .container .title{
+    font-family: 'Black Ops One', sans-serif;
+    color: white;
+    padding: 2rem;
+}
+
+.header-section .container .title h1{
+    font-size: 3rem;
+}
+
+.header-section .container .title .buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-section .container .logo-img{
+    flex: 0.65;
+}
+
+.header-section .container .logo-img > img{
+    height: 25rem;
+}
+
+/*ParagraphSection*/
+
+.paragraph-section{
+    background-color: #fffdf6;
+    padding: 2rem 0;
+}
+
+.paragraph-section .container{
+    display: flex;
+    align-items: center;
+    max-width: 75rem;
+    margin: auto;
+}
+
+/*ProductsSection*/
+
+.products-section{
+    background-color: #fffdf6;
+    padding: 2rem 0.5rem;
+}
+
+.products-section .container > div{
+    background-color: red;
+}
+
+/*SignInSection*/
+
+.sign-in-section{
+    padding: 2rem 0rem;
+}
+
+.sign-in-section .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    max-width: 75rem;
+    margin: auto;
 }
