@@ -1,4 +1,4 @@
-export interface ProductsProps{
+export interface ParagraphSectionProps{
     text?: string;
     title?: string;
     img?: string;

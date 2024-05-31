@@ -1,0 +1,22 @@
+.product-card{
+    width: 10rem;
+    height: 15rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #77b1cc;
+}
+
+.product-card .link-card{
+    display: flex;
+    justify-content: center;
+}
+
+.product-card .link-card .product-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card .link-card .product-content .product-title{
+    font-weight: bolder;
+    margin-bottom: 0.25rem;
+}

@@ -10,6 +10,7 @@ const SignInForm: React.FC = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    dataNascimento: '',
     usertype: '',
     cep: '',
     rua: '',
@@ -18,7 +19,7 @@ const SignInForm: React.FC = () => {
     estado: '',
     pais: '',
     numero: '',
-    complemento: '',
+    complemento: ''
   });
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -35,7 +36,6 @@ const SignInForm: React.FC = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    /* Não pergunta sobre a data de nascimento
     // Formatar data de nascimento no formato dd/MM/yyyy
     const formattedData = {
       ...formData,
@@ -47,7 +47,6 @@ const SignInForm: React.FC = () => {
     };
 
     console.log('Data de nascimento enviada:', formattedData.dataNascimento); // Log para verificar a data
-    */
 
     try {
       const response = await axios.post(`InformeOCaminhoAqui`, {
@@ -61,6 +60,7 @@ const SignInForm: React.FC = () => {
       setFormData({
         email: '',
         password: '',
+        dataNascimento: '',
         usertype: '',
         cep: '',
         rua: '',
@@ -90,6 +90,7 @@ const SignInForm: React.FC = () => {
         <h2>Informe suas informações de usuário</h2>
         <form onSubmit={handleSubmit}>
             <input type="text" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+            <input type="date" name="dataNascimento" placeholder="Data de Nascimento" value={formData.dataNascimento} onChange={handleChange}/>
             <input type="text" name="usertype" placeholder="Tipo de Usuário" value={formData.usertype} onChange={handleChange} />
             <input type="text" name="cep" placeholder="CEP" value={formData.cep} onChange={handleChange} />
             <input type="text" name="rua" placeholder="Rua" value={formData.rua} onChange={handleChange} />

@@ -48,6 +48,7 @@
 /*ParagraphSection*/
 
 .paragraph-section{
+    justify-content: center;
     background-color: #fffdf6;
     padding: 2rem 0;
 }
@@ -62,12 +63,30 @@
 /*ProductsSection*/
 
 .products-section{
+    justify-content: center;
     background-color: #fffdf6;
     padding: 2rem 0.5rem;
 }
 
-.products-section .container > div{
-    background-color: red;
+.products-section .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+    max-width: 75rem;
+    margin: auto;
+}
+
+.products-section .container .search-box > p{
+    color: black;
+}
+
+.products-section .container .products-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /*SignInSection*/
