@@ -44,14 +44,14 @@ def importar_csv_despejo_plastico(file):
     conn = connection()
     cursor = conn.cursor()
     with open(file, 'r') as file:
-        reader = csv.DictReader(file, delimiter='\t')  # Use a tabulação como delimitador
+        reader = csv.DictReader(file, delimiter=',')  # Use a vírgula como delimitador
         for row in reader:
             entidade = row['Entidade']
             ano = int(row['Ano'])
             participacao = row['Participacao']
 
             # Verifica se os dados já existem no banco de dados
-            cursor.execute("SELECT 1 FROM GS_DESPEJO_DE_PLASTICO WHERE Entidade = :1 AND Ano = :2 AND Participacao = :3", [entidade, ano, participacao])
+            cursor.execute("SELECT 1 FROM GS_DESPEJO_DE_PLASTICO WHERE Entidade = :1 AND Ano = :2 AND Participacao = :3",[entidade, ano, participacao])
             result = cursor.fetchone()
 
             # Se os dados não existirem, insere-os no banco de dados
