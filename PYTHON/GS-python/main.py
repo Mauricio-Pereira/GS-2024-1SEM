@@ -1,8 +1,5 @@
 import oracledb
 import csv
-import sqlite3
-import pandas as pd
-from sqlalchemy import create_engine
 
 
 def connection():
@@ -68,7 +65,7 @@ def select_producao_global():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM GS_PRODUCAO_PLASTICO")
     for row in cursor:
-        print(row)
+        print(f"Entidade: {row[0]}, Ano: {row[1]}, Produção Anual de Plástico: {row[2]}")
     cursor.close()
     conn.close()
 
@@ -77,7 +74,7 @@ def select_despejo_plastico():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM GS_DESPEJO_DE_PLASTICO")
     for row in cursor:
-        print(row)
+        print(f"Entidade: {row[0]}, Ano: {row[1]}, Participação: {row[2]}")
     cursor.close()
     conn.close()
 
@@ -87,20 +84,21 @@ def main():
     importar_csv_producao_plastico('1- producao-de-plastico-global.csv')
     importar_csv_despejo_plastico('2- participacao-despejo-residuo-plastico.csv')
     while True:
+        print("\n***** Digite a opção desejada: *****")
         print("1 - Produção Global de Plástico")
-        print("2 - Despejo de Plástico por Pais")
-        print("3 - Sair")
+        print("2 - Despejo de Plástico por País")
+        print("0 - Sair\n")
         opcao = int(input("Escolha uma opção: "))
 
-
-        if opcao == 1:
-            select_producao_global()
-        elif opcao == 2:
-            select_despejo_plastico()
-        elif opcao == 3:
-            break
-        else:
-            print("Opção inválida!")
+        match opcao:
+            case 1:
+                select_producao_global()
+            case 2:
+                select_despejo_plastico()
+            case 3:
+                break
+            case _:
+                print("Opção inválida!")
 
 
 if __name__ == '__main__':
