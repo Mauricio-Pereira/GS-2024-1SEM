@@ -95,7 +95,8 @@ def main():
                 select_producao_global()
             case 2:
                 select_despejo_plastico()
-            case 3:
+            case 0:
+                print("Finalizando...")
                 break
             case _:
                 print("Opção inválida!")
