@@ -1,7 +1,12 @@
 .form{
     background-color: #001718;
+    border-radius: 0.25rem;
     margin: 0 10rem;
-    padding: 0.5rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.form h2{
+    margin: 0.5rem 0;
 }
 
 .form form{
@@ -11,6 +16,8 @@
 
 .form form input{
     margin-bottom: 0.5rem;
+    padding: 0.25rem 0 0.25rem 0.25rem;
+    color: black;
 }
 
 .form form input[type="date"]{
@@ -27,5 +34,3 @@
     font-weight: bold;
     color: red;
 }
-
-/*SignInForm*/
