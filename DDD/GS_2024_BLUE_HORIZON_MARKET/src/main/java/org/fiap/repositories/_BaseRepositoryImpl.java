@@ -5,40 +5,45 @@ import org.fiap.utils.Log4jLogger;
 
 import java.util.List;
 
-public class _BaseRepositoryImpl <T extends _BaseEntity> implements _BaseRepository<T>{
+public class _BaseRepositoryImpl<T extends _BaseEntity> implements _BaseRepository<T> {
 
     protected Log4jLogger<T> logger;
 
     public _BaseRepositoryImpl(Class<T> tClass) {
         this.logger = new Log4jLogger<>(tClass);
     }
+
     @Override
-    public void Create(T entity) {
+    public void create(T entity) {
+        // Código para criar a entidade
         logger.logCreate(entity);
     }
 
     @Override
-    public List<T> ReadAll() {
-        logger.logReadAll(null);
-        return null;
+    public List<T> readAll() {
+        // Código para ler todas as entidades
+        logger.logReadAll();
+        return null; // Retornar a lista de entidades
     }
 
     @Override
-    public boolean DeleteById(int id) {
-        logger.logDeleteById(ReadAll().get(id));
-        return false;
-
+    public boolean deleteById(int id) {
+        // Código para deletar a entidade
+        logger.logDeleteById(readById(id));
+        return false; // Retornar o resultado da operação
     }
 
     @Override
-    public boolean UpdateById(T entity, int id) {
+    public boolean updateById(T entity, int id) {
+        // Código para atualizar a entidade
         logger.logUpdateById(entity);
-        return false;
+        return false; // Retornar o resultado da operação
     }
 
     @Override
-    public T ReadById(int id){
-        logger.logReadById(ReadAll().get(id));
-        return null;
+    public T readById(int id) {
+        // Código para ler a entidade por ID
+        logger.logReadById(readById(id));
+        return null; // Retornar a entidade
     }
 }

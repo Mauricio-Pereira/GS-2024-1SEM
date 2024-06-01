@@ -17,7 +17,7 @@ public class Address extends _BaseEntity {
     private String state;
     private String country;
     private String zipCode;
-
+    private User user;
     public Address() {
     }
 
@@ -31,6 +31,18 @@ public class Address extends _BaseEntity {
         this.state = state;
         this.country = country;
         this.zipCode = zipCode;
+    }
+
+    public Address(String zipCode, String country, String state, String city, String neighborhood, String street, String number, String complement, User user) {
+        this.street = street;
+        this.number = number;
+        this.complement = complement;
+        this.neighborhood = neighborhood;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.zipCode = zipCode;
+        this.user = user;
     }
 
     public String getStreet() {
@@ -102,6 +114,16 @@ public class Address extends _BaseEntity {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+        this.setUpdatedAt(LocalDateTime.now());
+    }
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
         this.setUpdatedAt(LocalDateTime.now());
     }
 

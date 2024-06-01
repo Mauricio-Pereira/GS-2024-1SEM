@@ -3,6 +3,7 @@ package org.fiap.repositories;
 import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.User;
+import org.fiap.utils.Log4jLogger;
 import org.fiap.utils.QueryProcessor;
 
 import java.sql.Connection;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UserRepository extends _BaseRepositoryImpl<User> {
-
+    Log4jLogger<User> logger = new Log4jLogger<>(User.class);
     private final DatabaseConnection databaseConnection = new DatabaseConnection();
     public static final String TB_NAME = "GS_USERS";
     public static final Map<String, String> TB_COLUMNS = Map.of(
@@ -66,8 +67,9 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
     @Query("INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE, CREATED_AT, UPDATED_AT) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)")
     public void create(User user) {
         try {
-            QueryProcessor.executeAnnotatedMethod(this, "create", user.getName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getUserType(), user.getPhone(), java.sql.Date.valueOf(user.getBirthDate()));
-            System.out.println("Cadastrado");
+            QueryProcessor.executeAnnotatedMethod(this, "create", user.getName(), user.getLastName(),
+                    user.getEmail(), user.getPassword(), user.getUserType(), user.getPhone(), java.sql.Date.valueOf(user.getBirthDate()));
+            logger.logCreate(user);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error creating user: " + e.getMessage());
@@ -88,7 +90,7 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
                         rs.getString("USER_TYPE"),
                         rs.getString("PHONE"),
                         rs.getDate("BIRTHDATE").toLocalDate());
-
+                logger.logReadById(user);
                 return user;
             }, "readById", id);
         } catch (Exception e) {
@@ -109,7 +111,7 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
                         rs.getString("USER_TYPE"),
                         rs.getString("PHONE"),
                         rs.getDate("BIRTHDATE").toLocalDate());
-
+                logger.logReadAll();
                 return user;
             }, "readAll");
         } catch (Exception e) {
@@ -120,7 +122,7 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
 
 
     @Query("UPDATE GS_USERS SET NOME = ?, SOBRENOME = ?, EMAIL = ?, PASSWORD = ?, USER_TYPE = ?, PHONE = ?, BIRTHDATE = ?, UPDATED_AT = CURRENT_TIMESTAMP WHERE USER_ID = ?")
-    public void updateById(User user, int id) {
+    public boolean updateById(User user, int id) {
         try {
             QueryProcessor.executeAnnotatedMethod(this, "updateById",
                     user.getName(),
@@ -131,22 +133,27 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
                     user.getPhone(),
                     java.sql.Date.valueOf(user.getBirthDate()),
                     id);
-            System.out.println("User updated");
+            logger.logUpdateById(user);
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Error updating user: " + e.getMessage());
+            return false;
         }
     }
 
     @Query("DELETE FROM GS_USERS WHERE USER_ID = ?")
-    public void deleteById(int id) {
+    public boolean deleteById(int id) {
         try {
+            User deletedUser = readById(id);
             QueryProcessor.executeAnnotatedMethod(this, "deleteById", id);
-            System.out.println("User deleted");
+            logger.logDeleteById(deletedUser);
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Error deleting user: " + e.getMessage());
+            return false;
         }
     }
+
+
 
 }
