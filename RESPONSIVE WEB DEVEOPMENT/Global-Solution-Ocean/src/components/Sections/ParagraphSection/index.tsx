@@ -1,7 +1,7 @@
-import { ProductsProps} from "./interface";
+import { ParagraphSectionProps} from "./interface";
 import '../sections_style.css';
 
-const ParagraphSection = (props: ProductsProps) => {
+const ParagraphSection = (props: ParagraphSectionProps) => {
     return(
         <>
         <section className="section paragraph-section">

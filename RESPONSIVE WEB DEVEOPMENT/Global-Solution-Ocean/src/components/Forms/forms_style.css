@@ -13,8 +13,13 @@
     margin-bottom: 0.5rem;
 }
 
+.form form input[type="date"]{
+    color: #999999;
+}
+
 .form form .submit-btn{
-    background-color: rgb(69, 134, 134);
+    background-color: #177a80;
+    color: white;
     padding: 0.5rem;
 }
 
