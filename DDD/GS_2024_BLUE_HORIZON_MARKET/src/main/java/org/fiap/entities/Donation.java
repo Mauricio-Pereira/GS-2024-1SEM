@@ -2,30 +2,22 @@ package org.fiap.entities;
 
 import java.time.LocalDateTime;
 
-public class Donation {
-    private int orderId; // Reference to Order
+public class Donation extends _BaseEntity {
+
+    private Order order;
     private Double amount;
-    private int ngoId; // Reference to NGO
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private Ngo ngo;
 
     public Donation() {
     }
 
-    public Donation(int orderId, Double amount, int ngoId, LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.orderId = orderId;
+    public Donation(int id, Order order, Double amount, Ngo ngo) {
+        super(id);
+        this.order = order;
         this.amount = amount;
-        this.ngoId = ngoId;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+        this.ngo = ngo;
+        this.setCreatedAt(LocalDateTime.now());
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public Double getAmount() {
@@ -33,41 +25,37 @@ public class Donation {
     }
 
     public void setAmount(Double amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Valor da doação não pode ser menor que zero");
+        }
         this.amount = amount;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
-    public int getNgoId() {
-        return ngoId;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setNgoId(int ngoId) {
-        this.ngoId = ngoId;
+    public void setOrder(Order order) {
+        this.order = order;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public Ngo getNgo() {
+        return ngo;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setNgo(Ngo ngo) {
+        this.ngo = ngo;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     @Override
     public String toString() {
         return "Donation{" +
-                "orderId=" + orderId +
+                "order=" + order +
                 ", amount=" + amount +
-                ", ngoId=" + ngoId +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+                ", ngo=" + ngo +
+                "} " + super.toString();
     }
 }

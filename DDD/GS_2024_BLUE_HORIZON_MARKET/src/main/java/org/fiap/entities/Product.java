@@ -1,36 +1,35 @@
 package org.fiap.entities;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Product extends _BaseEntity{
-    private int companyId; // Reference to Company
+public class Product extends _BaseEntity {
+    private Company company;
     private String name;
     private String description;
     private Double price;
     private int stock;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public Product() {
     }
 
-    public Product(int id, int companyId, String name, String description, Double price, int stock, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Product(int id, Company company, String name, String description, Double price, int stock) {
         super(id);
-        this.companyId = companyId;
+        this.company = company;
         this.name = name;
         this.description = description;
         this.price = price;
         this.stock = stock;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
-    public int getCompanyId() {
-        return companyId;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+    public void setCompany(Company company) {
+        this.company = company;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public String getName() {
@@ -39,6 +38,7 @@ public class Product extends _BaseEntity{
 
     public void setName(String name) {
         this.name = name;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public String getDescription() {
@@ -47,6 +47,7 @@ public class Product extends _BaseEntity{
 
     public void setDescription(String description) {
         this.description = description;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public Double getPrice() {
@@ -55,6 +56,7 @@ public class Product extends _BaseEntity{
 
     public void setPrice(Double price) {
         this.price = price;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public int getStock() {
@@ -63,34 +65,43 @@ public class Product extends _BaseEntity{
 
     public void setStock(int stock) {
         this.stock = stock;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "companyId=" + companyId +
+                "company=" + company +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", stock=" + stock +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
                 "} " + super.toString();
+    }
+
+    public Map<Boolean, String> validate() {
+        Map<Boolean, String> validation = new HashMap<>();
+
+        if (this.company == null) {
+            validation.put(false, "Empresa não pode ser nulo");
+        }
+
+        if (this.name == null || this.name.isEmpty()) {
+            validation.put(false, "Nome não pode ser vazio");
+        }
+
+        if (this.description == null || this.description.isEmpty()) {
+            validation.put(false, "Descrição não pode ser vazia");
+        }
+
+        if (this.price == null || this.price <= 0) {
+            validation.put(false, "Preço não pode ser menor ou igual a zero");
+        }
+
+        if (this.stock < 0) {
+            validation.put(false, "Estoque não pode ser menor que zero");
+        }
+
+        return validation;
     }
 }

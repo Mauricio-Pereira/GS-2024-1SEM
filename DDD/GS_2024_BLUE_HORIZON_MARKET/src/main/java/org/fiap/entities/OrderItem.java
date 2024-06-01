@@ -1,43 +1,45 @@
 package org.fiap.entities;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
-public class OrderItem extends _BaseEntity{
+public class OrderItem extends _BaseEntity {
 
-    private int orderId; // Reference to Order
-    private int productId; // Reference to Product
+    private Order order;
+    private Product product;
     private int quantity;
     private Double price;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public OrderItem() {
     }
 
-    public OrderItem(int id, int orderId, int productId, int quantity, Double price, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public OrderItem(int id, Order order, Product product, int quantity, Double price) {
         super(id);
-        this.orderId = orderId;
-        this.productId = productId;
+        this.order = order;
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
-    public int getOrderId() {
-        return orderId;
+    // Getters and setters
+
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public void setOrder(Order order) {
+        this.order = order;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
-    public int getProductId() {
-        return productId;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setProduct(Product product) {
+        this.product = product;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public int getQuantity() {
@@ -45,7 +47,11 @@ public class OrderItem extends _BaseEntity{
     }
 
     public void setQuantity(int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantidade não pode ser menor que zero");
+        }
         this.quantity = quantity;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     public Double getPrice() {
@@ -53,34 +59,37 @@ public class OrderItem extends _BaseEntity{
     }
 
     public void setPrice(Double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Preço não pode ser menor que zero");
+        }
         this.price = price;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+        this.setUpdatedAt(LocalDateTime.now());
     }
 
     @Override
     public String toString() {
         return "OrderItem{" +
-                "orderId=" + orderId +
-                ", productId=" + productId +
+                "order=" + order +
+                ", product=" + product +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
                 "} " + super.toString();
+    }
+
+    public Map<Boolean, String> validate() {
+        Map<Boolean, String> validation = new HashMap<>();
+        if (this.order == null) {
+            validation.put(false, "Pedido não pode ser nulo");
+        }
+        if (this.product == null) {
+            validation.put(false, "Produto não pode ser nulo");
+        }
+        if (this.quantity <= 0) {
+            validation.put(false, "Quantidade deve ser maior que zero");
+        }
+        if (this.price == null || this.price <= 0) {
+            validation.put(false, "Preço deve ser maior que zero");
+        }
+        return validation;
     }
 }
