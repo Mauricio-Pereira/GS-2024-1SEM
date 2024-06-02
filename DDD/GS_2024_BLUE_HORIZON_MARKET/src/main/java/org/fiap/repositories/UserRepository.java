@@ -43,7 +43,7 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
                 + "SOBRENOME VARCHAR2(255) NOT NULL, "
                 + "EMAIL VARCHAR2(255) NOT NULL UNIQUE, "
                 + "PASSWORD VARCHAR2(255) NOT NULL, "
-                + "USER_TYPE VARCHAR2(50) NOT NULL, "
+                + "USER_TYPE VARCHAR2(50) NOT NULL CHECK (USER_TYPE IN ('buyer', 'admin_company', 'admin_ngo')), "
                 + "PHONE VARCHAR2(20), "
                 + "BIRTHDATE DATE, "
                 + "CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL, "

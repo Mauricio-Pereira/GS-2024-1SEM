@@ -15,6 +15,7 @@ public class Ngo extends _BaseEntity {
     private String phone;
     private String website;
     private String contactEmail;
+    private Double totalDonations;
 
     public Ngo() {
     }
@@ -27,6 +28,15 @@ public class Ngo extends _BaseEntity {
         this.phone = phone;
         this.website = website;
         this.contactEmail = contactEmail;
+    }
+
+    public Ngo(User contactUser, String name, String mission, String website) {
+        this.contactUser = contactUser;
+        this.name = name;
+        this.mission = mission;
+        this.phone = contactUser.getPhone();
+        this.website = website;
+        this.contactEmail = contactUser.getEmail();
     }
 
     public User getContactUser() {
@@ -83,6 +93,14 @@ public class Ngo extends _BaseEntity {
         this.setUpdatedAt(LocalDateTime.now());
     }
 
+    public Double getTotalDonations() {
+        return totalDonations;
+    }
+
+    public void setTotalDonations(Double totalDonations) {
+        this.totalDonations = totalDonations;
+        this.setUpdatedAt(LocalDateTime.now());
+    }
     @Override
     public String toString() {
         return "Ngo{" +

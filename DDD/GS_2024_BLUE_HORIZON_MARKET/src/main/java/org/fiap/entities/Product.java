@@ -23,6 +23,14 @@ public class Product extends _BaseEntity {
         this.stock = stock;
     }
 
+    public Product(String name, String description, Double price, int stock, Company company) {
+        this.company = company;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public Company getCompany() {
         return company;
     }

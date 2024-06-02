@@ -4,6 +4,7 @@ import oracle.sql.NUMBER;
 import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Address;
+import org.fiap.entities.Product;
 import org.fiap.entities.User;
 import org.fiap.utils.Log4jLogger;
 import org.fiap.utils.QueryProcessor;
@@ -168,6 +169,8 @@ public class AddressRepository extends _BaseRepositoryImpl<Address>{
             throw new RuntimeException("Error deleting address: " + e.getMessage());
         }
     }
+
+
 
 
 

@@ -20,6 +20,16 @@ public class Donation extends _BaseEntity {
         this.setUpdatedAt(LocalDateTime.now());
     }
 
+    public Donation(Order order, Double amount, Ngo ngo) {
+        this.order = order;
+        this.amount = amount;
+        this.ngo = ngo;
+        this.setCreatedAt(LocalDateTime.now());
+        this.setUpdatedAt(LocalDateTime.now());
+    }
+
+
+
     public Double getAmount() {
         return amount;
     }

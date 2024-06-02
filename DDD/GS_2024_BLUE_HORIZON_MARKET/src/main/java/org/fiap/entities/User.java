@@ -19,7 +19,7 @@ public class User extends _BaseEntity {
     private String lastName;
     private String email;
     private String password;
-    private String userType; // 'buyer', 'admin_company', 'admin_ong'
+    private String userType; // 'buyer', 'admin_company', 'admin_ngo'
     private Address address;
     private String phone;
     private LocalDate birthDate;

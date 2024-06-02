@@ -1,5 +1,7 @@
 package org.fiap.entities;
 
+import org.fiap.repositories.UserRepository;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -34,12 +36,21 @@ public class Order extends _BaseEntity {
         this.items = items != null ? items : new ArrayList<>();
     }
 
+    public Order(int buyer, String orderStatus) {
+        this.orderNumber = orderNumber != null ? orderNumber : generateOrderNumber();
+        this.buyer = new UserRepository().readById(buyer);
+        this.orderStatus = orderStatus != null ? orderStatus : "pending";
+        this.items = items != null ? items : new ArrayList<>();
+        this.recalculateAmounts();
+    }
+
     private String generateOrderNumber() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
         String timestamp = LocalDateTime.now().format(formatter);
         String uuid = UUID.randomUUID().toString().substring(0, 8);
         return timestamp + "-" + uuid;
     }
+
 
     // Getters and setters
 
@@ -119,7 +130,7 @@ public class Order extends _BaseEntity {
         this.setUpdatedAt(LocalDateTime.now());
     }
 
-    private void recalculateAmounts() {
+    public void recalculateAmounts() {
         this.totalAmount = items.stream().mapToDouble(OrderItem::getPrice).sum();
         double taxa = totalAmount * 0.12; // 12% do totalAmount
         this.donationAmount = taxa * 0.6667; // 8% do totalAmount (8/12 = 0.6667)
@@ -135,7 +146,6 @@ public class Order extends _BaseEntity {
                 ", donationAmount=" + donationAmount +
                 ", maintenanceAmount=" + maintenanceAmount +
                 ", orderStatus='" + orderStatus + '\'' +
-                ", items=" + items +
                 "} " + super.toString();
     }
 

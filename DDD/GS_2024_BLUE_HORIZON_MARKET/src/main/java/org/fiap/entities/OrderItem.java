@@ -1,5 +1,8 @@
 package org.fiap.entities;
 
+import org.fiap.repositories.OrderRepository;
+import org.fiap.repositories.ProductRepository;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,13 +17,28 @@ public class OrderItem extends _BaseEntity {
     public OrderItem() {
     }
 
-    public OrderItem(int id, Order order, Product product, int quantity, Double price) {
+    public OrderItem(int id, Order order, Product product, int quantity) {
         super(id);
         this.order = order;
         this.product = product;
         this.quantity = quantity;
-        this.price = price;
+        this.price = this.product.getPrice()*this.quantity;
     }
+
+    public OrderItem(Order order, Product product, int quantity) {
+        this.order = order;
+        this.product = product;
+        this.quantity = quantity;
+        this.price = this.product.getPrice()*this.quantity;
+    }
+
+    public OrderItem(int orderId, int productId, int quantity ) {
+        this.order = new OrderRepository().readById(orderId);
+        this.product = new ProductRepository().readById(productId);
+        this.quantity = quantity;
+        this.price = this.product.getPrice()*this.quantity;
+    }
+
 
     // Getters and setters
 

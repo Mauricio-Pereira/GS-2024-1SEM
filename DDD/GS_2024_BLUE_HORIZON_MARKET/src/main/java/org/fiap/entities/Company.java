@@ -1,5 +1,6 @@
 package org.fiap.entities;
 
+import org.fiap.repositories.UserRepository;
 import org.fiap.utils.ReceitaWsUtil;
 import org.fiap.utils.ViaCepValidator;
 
@@ -20,6 +21,15 @@ public class Company extends _BaseEntity{
     private String verificationStatus; // 'verified', 'pending'
 
     public Company() {
+    }
+
+    public Company(String name, String cnpj, String phone, String website, String verificationStatus, int admin_id) {
+        this.name = name;
+        this.cnpj = cnpj;
+        this.phone = phone;
+        this.website = website;
+        this.verificationStatus = verificationStatus;
+        this.admin = new UserRepository().readById(admin_id);
     }
 
     public Company(int id, User admin, String name, String cnpj, String phone, String website, List<Product> products, String verificationStatus) {
