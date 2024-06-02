@@ -11,7 +11,8 @@
 
 .header-section{
     justify-content: center;
-    background-color: blue;
+    background-image: linear-gradient(#053133, #050633);
+    background-color: #1a1a1b;
     padding: 3rem 0;
 }
 
@@ -23,6 +24,7 @@
 }
 
 .header-section .container .title{
+    flex: 1;
     font-family: 'Black Ops One', sans-serif;
     color: white;
     padding: 2rem;
@@ -35,14 +37,29 @@
 .header-section .container .title .buttons{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.header-section .container .title .buttons a{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+    text-align: center;
+}
+
+.header-section .container .title .buttons .sign-in-button{
+    background-color: #5897d1;
+}
+
+.header-section .container .title .buttons .login-button{
+    background-color: #9db5cc;
 }
 
 .header-section .container .logo-img{
-    flex: 0.65;
-}
-
-.header-section .container .logo-img > img{
-    height: 25rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 /*ParagraphSection*/
