@@ -1,8 +1,13 @@
+/* ===== Importes: Fontes ===== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 .header {
     background-color: #001718;
     color: white;
     padding: 1rem 0;
     width: 100%;
+    min-width: 790px;
 }
 
 .header .container {
@@ -10,6 +15,8 @@
     align-items: center;
     max-width: 75rem;
     margin: auto;
+    font-family: 'Black Ops One', sans-serif;
+    white-space: nowrap;
 }
 
 .header .container .logo{
@@ -20,25 +27,67 @@
     align-items: center;
 }
 
-.header .container .logo > img{
-    width: 3rem;
+.header .container .logo h1{
+    font-size: 1.25rem;
+}
+
+@media (max-width: 1071px) {
+    .header .container .logo img{
+        display: none;
+    }
 }
 
 .header .container .navigation{
-    flex: 1.5;
+    flex: 1;
+    padding: 0 1rem;
+}
+
+@media (max-width: 635px){
+    .header .container .navigation{
+        padding: 0 1vw;
+    }
+}
+
+.header .container .navigation .links-list{
     display: flex;
+    height: 6rem;
+    min-width: 283px;
+    align-items: center;
+}
+
+.header .container .navigation .links-list li{
+    flex: 1;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.header .container .navigation .links{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 25rem;
+.header .container .navigation .links-list li a{
+    border-radius: 0.5rem;
+    width: 7rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    background-color: #9db5cc;
 }
 
 .header .container .user-info{
     flex: 0.25;
     display: flex;
     flex-direction: column;
+}
+
+.header .container .user-info a{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+    margin: 0.25rem 0;
+    text-align: center;
+}
+
+.header .container .user-info .sign-in-button{
+    background-color: #5897d1;
+}
+
+.header .container .user-info .login-button{
+    background-color: #9db5cc;
 }

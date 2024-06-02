@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import '../sections_style.css';
 
@@ -11,12 +12,12 @@ const HeaderSection = () => {
                     <h1>Blue Horizon</h1>
                     <span>Onde o oceano de sustentabilidade encontra as ondas do comércio</span>
                     <div className="buttons">
-                        <Link href="/sign-in-page">Cadastre-se</Link>
-                        <Link href="/login-page">Login</Link>
+                        <Link href="/sign-in-page" className="sign-in-button">Cadastre-se</Link>
+                        <Link href="/login-page" className="login-button">Login</Link>
                     </div>
                 </div>
                 <div className="logo-img">
-                    <img src="/images/logo.png" alt="" />
+                    <Image src="/images/logo.png" width={300} height={300} alt="Log" />
                 </div>
             </div>
         </section>
