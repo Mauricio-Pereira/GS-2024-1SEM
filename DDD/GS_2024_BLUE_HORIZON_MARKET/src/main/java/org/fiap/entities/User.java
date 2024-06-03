@@ -175,14 +175,7 @@ public class User extends _BaseEntity {
             validation.put(false, "Sobrenome não pode ser vazio");
         }
 
-        if (this.address == null) {
-            validation.put(false, "Endereço não pode ser vazio");
-        } else {
-            Map<Boolean, String> addressValidation = this.address.validate();
-            if (!addressValidation.isEmpty()) {
-                validation.putAll(addressValidation);
-            }
-        }
+
 
         // Validate email
         if (this.email == null || this.email.isEmpty()) {

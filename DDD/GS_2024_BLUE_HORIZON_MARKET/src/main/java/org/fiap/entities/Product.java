@@ -90,9 +90,6 @@ public class Product extends _BaseEntity {
     public Map<Boolean, String> validate() {
         Map<Boolean, String> validation = new HashMap<>();
 
-        if (this.company == null) {
-            validation.put(false, "Empresa não pode ser nulo");
-        }
 
         if (this.name == null || this.name.isEmpty()) {
             validation.put(false, "Nome não pode ser vazio");

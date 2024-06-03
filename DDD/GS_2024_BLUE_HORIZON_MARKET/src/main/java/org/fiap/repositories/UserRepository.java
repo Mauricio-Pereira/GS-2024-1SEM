@@ -154,6 +154,29 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
         }
     }
 
+    @Query("SELECT * FROM GS_USERS WHERE EMAIL = ?")
+    public User findByEmail(String email) {
+        try {
+            return QueryProcessor.executeSingleResultQuery(this, rs -> {
+                User user = new User(
+                        rs.getInt("USER_ID"),
+                        rs.getString("NOME"),
+                        rs.getString("SOBRENOME"),
+                        rs.getString("EMAIL"),
+                        rs.getString("PASSWORD"),
+                        rs.getString("USER_TYPE"),
+                        rs.getString("PHONE"),
+                        rs.getDate("BIRTHDATE").toLocalDate()
+                );
+                user.setCreatedAt(rs.getTimestamp("CREATED_AT").toLocalDateTime());
+                user.setUpdatedAt(rs.getTimestamp("UPDATED_AT").toLocalDateTime());
+                return user;
+            }, "findByEmail", email);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error finding user by email: " + e.getMessage());
+        }
+    }
 
 
 }

@@ -76,11 +76,13 @@ public class OrderItemRepository extends _BaseRepositoryImpl<OrderItem> {
             Order order = new OrderRepository().readById(orderItem.getOrder().getId());
             order.addItem(orderItem);
             new OrderRepository().updateOrderAmounts(order);
+            new OrderRepository().updateById(order, orderItem.getOrder().getId()); // Atualiza a ordem no banco de dados
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error creating order item: " + e.getMessage());
         }
     }
+
 
     @Query("SELECT * FROM GS_ORDER_ITEMS WHERE ORDER_ITEM_ID = ?")
     public OrderItem readById(int id) {
@@ -148,25 +150,24 @@ public class OrderItemRepository extends _BaseRepositoryImpl<OrderItem> {
         }
     }
 
-    @Query("DELETE FROM GS_ORDER_ITEMS WHERE ORDER_ITEM_ID = ?")
-    public boolean deleteById(int id) {
+    @Query("SELECT * FROM GS_ORDER_ITEMS WHERE PRODUCT_ID = ?")
+    public List<OrderItem> getItemsByProductId(int productId) {
         try {
-            OrderItem deletedOrderItem = readById(id);
-            if (deletedOrderItem == null) {
-                throw new RuntimeException("Order item not found");
-            }
-            QueryProcessor.executeAnnotatedMethod(this, "deleteById", id);
-
-            // Recalcular e atualizar os valores do pedido
-            Order order = deletedOrderItem.getOrder();
-            order.removeItem(deletedOrderItem);
-            new OrderRepository().updateOrderAmounts(order);
-            logger.logDeleteById(deletedOrderItem);
-
-            return true;
+            return QueryProcessor.executeSelectQuery(this, rs -> {
+                OrderItem orderItem = new OrderItem(
+                        rs.getInt("ORDER_ITEM_ID"),
+                        new OrderRepository().readById(rs.getInt("ORDER_ID")),
+                        new ProductRepository().readById(rs.getInt("PRODUCT_ID")),
+                        rs.getInt("QUANTITY")
+                );
+                orderItem.setPrice(rs.getDouble("PRICE"));
+                orderItem.setCreatedAt(rs.getTimestamp("CREATED_AT").toLocalDateTime());
+                orderItem.setUpdatedAt(rs.getTimestamp("UPDATED_AT").toLocalDateTime());
+                return orderItem;
+            }, "getItemsByProductId", productId);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            throw new RuntimeException("Error retrieving order items by product ID: " + e.getMessage());
         }
     }
 
@@ -211,6 +212,57 @@ public class OrderItemRepository extends _BaseRepositoryImpl<OrderItem> {
             throw new RuntimeException("Error reading order items by order ID: " + e.getMessage());
         }
     }
+
+    @Query("SELECT * FROM GS_ORDER_ITEMS WHERE ORDER_ID = ?")
+    public List<OrderItem> getItemsByOrderId(int orderId) {
+        try {
+            return QueryProcessor.executeSelectQuery(this, rs -> {
+                OrderItem orderItem = new OrderItem(
+                        rs.getInt("ORDER_ITEM_ID"),
+                        new OrderRepository().readById(rs.getInt("ORDER_ID")),
+                        new ProductRepository().readById(rs.getInt("PRODUCT_ID")),
+                        rs.getInt("QUANTITY")
+                );
+                orderItem.setPrice(rs.getDouble("PRICE"));
+                orderItem.setCreatedAt(rs.getTimestamp("CREATED_AT").toLocalDateTime());
+                orderItem.setUpdatedAt(rs.getTimestamp("UPDATED_AT").toLocalDateTime());
+                return orderItem;
+            }, "getItemsByOrderId", orderId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error retrieving order items by order ID: " + e.getMessage());
+        }
+    }
+
+    @Query("DELETE FROM GS_ORDER_ITEMS WHERE ORDER_ID = ?")
+    public void deleteOrderItems(int orderId) {
+        try {
+            QueryProcessor.executeAnnotatedMethod(this, "deleteOrderItems", orderId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error deleting order items for order id: " + orderId);
+        }
+    }
+
+    @Query("DELETE FROM GS_ORDER_ITEMS WHERE ORDER_ITEM_ID = ?")
+    public boolean deleteById(int id) {
+        try {
+            OrderItem deletedOrderItem = readById(id);
+            Order order = new OrderRepository().readById(deletedOrderItem.getOrder().getId());
+            QueryProcessor.executeAnnotatedMethod(this, "deleteById", id);
+
+            // Recalcular e atualizar os valores do pedido
+            order.removeItem(deletedOrderItem);
+            new OrderRepository().updateOrderAmounts(order);
+            logger.logDeleteById(deletedOrderItem);
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 
 }

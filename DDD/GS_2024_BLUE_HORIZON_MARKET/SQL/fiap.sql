@@ -1,4 +1,4 @@
-/*select * from GS_USERS;
+select * from GS_USERS;
 select * from GS_ADDRESSES;
 select * from GS_COMPANIES;
 select * from GS_PRODUCTS;
@@ -16,3 +16,5 @@ drop table GS_ORDERS cascade constraints;
 drop table GS_ORDER_ITEMS cascade constraints;
 drop table GS_NGOS cascade constraints;
 drop table GS_DONATIONS cascade constraints;
+
+
