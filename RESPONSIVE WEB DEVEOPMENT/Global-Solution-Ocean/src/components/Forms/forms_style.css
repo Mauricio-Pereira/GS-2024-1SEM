@@ -1,17 +1,28 @@
+/* ===== Importes: Fontes ===== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 .form{
     background-color: #001718;
     border-radius: 0.25rem;
-    margin: 0 10rem;
-    padding: 0.25rem 0.75rem;
-}
-
-.form h2{
-    margin: 0.5rem 0;
+    margin: auto;
+    max-width: 65rem;
+    padding: 0.75rem;
 }
 
 .form form{
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form form span,
+.form form label{
+    color: white;
+}
+
+.sign-in-form form label{
+    font-size: 0.75rem;
 }
 
 .form form input{
@@ -24,10 +35,65 @@
     color: #999999;
 }
 
+.form form .user-boxes,
+.form form .address-boxes{
+    display: flex;
+    flex-direction: column;
+}
+
+.form form .user-boxes div,
+.form form .address-boxes div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form form .user-boxes .name-box,
+.form form .user-boxes .contact-box,
+.form form .address-boxes .address-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form form .email-box,
+.login-form form .password-box{
+    display: flex;
+}
+
+.form form .user-boxes .date-box,
+.login-form form .email-box,
+.login-form form .password-box{
+    flex-direction: column;
+}
+
+.form form .user-boxes .name-box input,
+.form form .user-boxes .contact-box input{
+    flex: 0.498;
+}
+
+.form form .user-boxes .date-box input,
+.form form .user-boxes .usertype-box input,
+.form form .user-boxes .password-box input{
+    flex: 1;
+}
+
 .form form .submit-btn{
+    border-radius: 0.5rem;
     background-color: #177a80;
     color: white;
     padding: 0.5rem;
+    transition: 0.01s;
+}
+
+.form form .submit-btn:hover{
+    cursor: pointer;
+}
+
+.form form .submit-btn:hover,
+.form form .submit-btn:focus{
+    background-color: #74ce5e;
+    border: 0.25rem solid #61aa4f;
+    margin: 0;
 }
 
 .form form .error-message{

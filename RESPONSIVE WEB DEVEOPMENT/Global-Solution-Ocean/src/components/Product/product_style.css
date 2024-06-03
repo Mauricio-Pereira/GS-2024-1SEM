@@ -4,6 +4,7 @@
     padding: 0.5rem;
     border-radius: 0.5rem;
     background-color: #77b1cc;
+    margin: 0.25rem;
 }
 
 .product-card .link-card{
@@ -14,9 +15,17 @@
 .product-card .link-card .product-content{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card .link-card .product-content .product-title{
     font-weight: bolder;
     margin-bottom: 0.25rem;
+	overflow-y: scroll;
+}
+
+.product-card .link-card .product-content .product-description{
+    flex: 1;
+    max-height: 4rem;
+	overflow-y: scroll;
 }

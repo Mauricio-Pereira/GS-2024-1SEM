@@ -7,17 +7,23 @@ import '../sections_style.css';
 import Item from "./interface";
 
 export default function ProductsSection() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Item[]>([]);
 
-    function getDataServer() {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-        .then((response) => {
-            return response.json();
-        })
-        .then((content) => {
-            setData(content);
-        });
-    }
+    useEffect(() => {
+        // Função assíncrona para buscar dados da API
+        const getDataServer = async () => {
+            try {
+                const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+                const content = await response.json();
+                setData(content);
+            } catch (error) {
+                console.error("Erro ao buscar dados:", error);
+            }
+        };
+
+        // Chamando a função assíncrona
+        getDataServer();
+    }, []);
 
     return(
         <>
@@ -25,12 +31,6 @@ export default function ProductsSection() {
             <div className="container">
                 <div className="search-box">
                     <p>Teste</p>
-                    <button
-                        onClick={getDataServer}
-                        className="border bg-amber-950 p-4 text-white"
-                    >
-                    Carregar
-                    </button>
                 </div>
                 <div className="products-box">
                     {data.map((item: Item) => {
