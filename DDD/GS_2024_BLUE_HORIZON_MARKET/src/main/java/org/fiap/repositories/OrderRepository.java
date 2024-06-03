@@ -96,11 +96,22 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
                     new DonationRepository().create(donation, order.getId(), ngo.getId());
                 }
             }
+
+            // Atualiza o estoque dos produtos se o status for "paid"
+            if ("paid".equalsIgnoreCase(order.getOrderStatus())) {
+                for (OrderItem item : order.getItems()) {
+                    Product product = item.getProduct();
+                    int newStock = product.getStock() - item.getQuantity();
+                    product.setStock(newStock);
+                    new ProductRepository().updateById(product, product.getId());
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error creating order: " + e.getMessage());
         }
     }
+
 
 
 
@@ -159,12 +170,11 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
         }
     }
 
-    @Query("UPDATE GS_ORDERS SET ORDER_NUMBER = ?, BUYER_ID = ?, TOTAL_AMOUNT = ?, DONATION_AMOUNT = ?, MAINTENANCE_AMOUNT = ?, ORDER_STATUS = ?, UPDATED_AT = SYSTIMESTAMP WHERE ORDER_ID = ?")
+    @Query("UPDATE GS_ORDERS SET ORDER_NUMBER = ?, TOTAL_AMOUNT = ?, DONATION_AMOUNT = ?, MAINTENANCE_AMOUNT = ?, ORDER_STATUS = ?, UPDATED_AT = SYSTIMESTAMP WHERE ORDER_ID = ?")
     public boolean updateById(Order order, int orderId) {
         try {
             QueryProcessor.executeAnnotatedMethod(this, "updateById",
                     order.getOrderNumber(),
-                    order.getBuyer().getId(),
                     order.getTotalAmount(),
                     order.getDonationAmount(),
                     order.getMaintenanceAmount(),
@@ -180,6 +190,16 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
                 for (Ngo ngo : ngos) {
                     Donation donation = new Donation(0, order, amountPerNgo, ngo);
                     new DonationRepository().create(donation, orderId, ngo.getId());
+                }
+            }
+
+            // Atualiza o estoque dos produtos se o status for alterado para "paid"
+            if ("paid".equalsIgnoreCase(order.getOrderStatus())) {
+                for (OrderItem item : order.getItems()) {
+                    Product product = item.getProduct();
+                    int newStock = product.getStock() - item.getQuantity();
+                    product.setStock(newStock);
+                    new ProductRepository().updateById(product, product.getId());
                 }
             }
 
@@ -206,10 +226,7 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
         try {
             Order deletedOrder = new OrderRepository().readById(id);
             // Excluir itens de pedido relacionados
-            List<OrderItem> orderItems = new OrderItemRepository().readByOrderId(id);
-            for (OrderItem item : orderItems) {
-                new OrderItemRepository().deleteById(item.getId());
-            }
+            deleteOrderItems(id);
 
             // Excluir doações relacionadas
             List<Donation> donations = new DonationRepository().readByOrderId(id);
@@ -230,20 +247,21 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
 
 
 
-    @Query("UPDATE GS_ORDERS SET TOTAL_AMOUNT = ?, DONATION_AMOUNT = ?, MAINTENANCE_AMOUNT = ?, UPDATED_AT = CURRENT_TIMESTAMP WHERE ORDER_ID = ?")
+    @Query("UPDATE GS_ORDERS SET TOTAL_AMOUNT = ?, DONATION_AMOUNT = ?, MAINTENANCE_AMOUNT = ? WHERE ORDER_ID = ?")
     public void updateOrderAmounts(Order order) {
-        order.recalculateAmounts();
         try {
             QueryProcessor.executeAnnotatedMethod(this, "updateOrderAmounts",
                     order.getTotalAmount(),
                     order.getDonationAmount(),
                     order.getMaintenanceAmount(),
                     order.getId());
+            logger.logUpdateById(order);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error updating order amounts: " + e.getMessage());
         }
     }
+
 
     @Query("SELECT ORDER_ID FROM GS_ORDERS WHERE ORDER_NUMBER = ?")
     public Integer getOrderIdByOrderNumber(String orderNumber) {
@@ -255,4 +273,13 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
         }
     }
 
+    @Query("DELETE FROM GS_ORDER_ITEMS WHERE ORDER_ID = ?")
+    public void deleteOrderItems(int orderId) {
+        try {
+            QueryProcessor.executeAnnotatedMethod(this, "deleteOrderItems", orderId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error deleting order items for order id: " + orderId);
+        }
+    }
 }

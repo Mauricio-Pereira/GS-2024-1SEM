@@ -1,6 +1,8 @@
 package org.fiap.entities;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Donation extends _BaseEntity {
 
@@ -67,5 +69,19 @@ public class Donation extends _BaseEntity {
                 ", amount=" + amount +
                 ", ngo=" + ngo +
                 "} " + super.toString();
+    }
+
+    public Map<Boolean, String> validate() {
+        Map<Boolean, String> validation = new HashMap<>();
+        if (this.order == null) {
+            validation.put(false, "Pedido não pode ser nulo");
+        }
+        if (this.amount == null || this.amount <= 0) {
+            validation.put(false, "Valor da doação deve ser maior que zero");
+        }
+        if (this.ngo == null) {
+            validation.put(false, "NGO não pode ser nulo");
+        }
+        return validation;
     }
 }

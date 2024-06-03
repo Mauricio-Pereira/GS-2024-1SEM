@@ -128,9 +128,6 @@ public class Company extends _BaseEntity{
 
     public Map<Boolean, String> validate() {
         Map<Boolean, String> validation = super.validate();
-        if (this.admin == null) {
-            validation.put(false, "Admin não pode ser vazio");
-        }
 
         if (this.name == null || this.name.isEmpty()) {
             validation.put(false, "Nome não pode ser vazio");

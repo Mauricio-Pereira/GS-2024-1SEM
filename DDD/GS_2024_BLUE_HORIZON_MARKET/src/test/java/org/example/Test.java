@@ -2,6 +2,7 @@ package org.example;
 
 import org.fiap.entities.*;
 import org.fiap.repositories.*;
+import org.fiap.services.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
+
         UserRepository userRepository = new UserRepository();
         AddressRepository addressRepository = new AddressRepository();
         CompanyRepository companyRepository = new CompanyRepository();
@@ -16,7 +18,7 @@ public class Test {
         OrderRepository orderRepository = new OrderRepository();
         OrderItemRepository orderItemRepository = new OrderItemRepository();
         NgoRepository ngoRepository = new NgoRepository();
-        DonationRepository donationRepository = new DonationRepository();
+
 
         User user = new User("John", "Doe", "john2@email.com", "Senha@123", "admin_company", "11 99999-9999", LocalDate.of(1990, 1, 1));
         User user2 = new User("Maria", "Doe", "maria@email.com", "Senha@123", "buyer", "11 99999-9999", LocalDate.of(1990, 1, 1));
@@ -65,7 +67,6 @@ public class Test {
         orderItemRepository.create(item2);
         orderItemRepository.create(item3);
 
-
         orderRepository.deleteById(1);
 
 
@@ -113,10 +114,10 @@ public class Test {
         orderItemRepository.readById(1);
         item1.setQuantity(3);
         orderItemRepository.updateById(item1, 1);
-        orderItemRepository.deleteById(2);
+        //orderItemRepository.deleteById(2);
 
 
-        productRepository.deleteById(2);
+        //productRepository.deleteById(2);
 
 
         //TESTS NGOS
@@ -125,8 +126,6 @@ public class Test {
         ngo2.setName("UNESCO Updated");
         ngoRepository.updateById(ngo2,2);
         ngoRepository.deleteById(1);
-
-
 
     }
 }
