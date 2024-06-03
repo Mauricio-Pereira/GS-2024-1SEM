@@ -12,24 +12,26 @@
     align-items: start;
     max-width: 75rem;
     margin: auto;
+    padding: 0 0.5rem;
 }
 
 .footer .container .boxes{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 1rem;
 }
 
 .footer .container .boxes .site-info{
-    flex: 1;
+    width: 20%;
 }
 
 .footer .container .boxes .useful-links{
-    flex: 1;
+    width: 20%;
 }
 
 .footer .container .boxes .social-media{
-    flex: 0.5;
+    width: 20%;
 }
 
 .footer .container .boxes .copyright{}

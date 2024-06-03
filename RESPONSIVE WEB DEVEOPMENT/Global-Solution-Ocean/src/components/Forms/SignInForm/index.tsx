@@ -93,40 +93,59 @@ const SignInForm: React.FC = () => {
   return (
     <>
     <div className="form sign-in-form">
-        <h2>Informe suas informações de usuário</h2>
         <form onSubmit={handleSubmit}>
+          <div className="user-boxes">
+            <span>Informe suas informações de usuário</span>
 
-            <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
-            <input type="text" name="sobrenome" placeholder="Sobrenome" value={formData.sobrenome} onChange={handleChange} />
+            <div className="name-box">
+              <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
+              <input type="text" name="sobrenome" placeholder="Sobrenome" value={formData.sobrenome} onChange={handleChange} />
+            </div>
 
-            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-            <input type="date" name="dataNascimento" placeholder="Data de Nascimento" value={formData.dataNascimento} onChange={handleChange}/>
-            <input type="phone" name="phone" placeholder="Telefone" value={formData.phone} onChange={handleChange}/>
+            <div className="date-box">
+              <label htmlFor="date">Data de Nasimento</label>
+              <input type="date" name="dataNascimento" id="date" placeholder="Data de Nascimento" value={formData.dataNascimento} onChange={handleChange}/>
+            </div>
 
-            <input type="text" name="usertype" placeholder="Tipo de Usuário" value={formData.usertype} onChange={handleChange} />
+            <div className="contact-box">
+              <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+              <input type="phone" name="phone" placeholder="Telefone" value={formData.phone} onChange={handleChange}/>
+            </div>
 
-            {/*
-            <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
-            <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
-            <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
-            */}
-
-            <input type="text" name="cep" placeholder="CEP" value={formData.cep} onChange={handleChange} />
-            <input type="text" name="rua" placeholder="Rua" value={formData.rua} onChange={handleChange} />
+            <div className="usertype-box">
+              <input type="text" name="usertype" placeholder="Tipo de Usuário" value={formData.usertype} onChange={handleChange} />
+              {/*
+              <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
+              <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
+              <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
+              */}
+            </div>
             
-            <input type="text" name="numero" placeholder="Número" value={formData.numero} onChange={handleChange} />
-            <input type="text" name="complemento" placeholder="Complemento" value={formData.complemento} onChange={handleChange} />
-            <input type="text" name="bairro" placeholder="Bairro" value={formData.bairro} onChange={handleChange} />
+            <div className="password-box">
+              <input type="password" name="senha" placeholder="Senha" value={formData.password} onChange={handleChange} />
+            </div>
+          </div>
+
+          <div className="address-boxes">
+            <span>Informações de Endereço</span>
             
-            <input type="text" name="cidade" placeholder="Cidade" value={formData.cidade} onChange={handleChange} />
-            <input type="text" name="estado" placeholder="Estado" value={formData.estado} onChange={handleChange} />
-            <input type="text" name="pais" placeholder="País" value={formData.pais} onChange={handleChange} />
+            <div className="address-box">
+              <input type="text" name="cep" placeholder="CEP" value={formData.cep} onChange={handleChange} />
+            
+              <input type="text" name="pais" placeholder="País" value={formData.pais} onChange={handleChange} />
+              <input type="text" name="estado" placeholder="Estado" value={formData.estado} onChange={handleChange} />
+              <input type="text" name="cidade" placeholder="Cidade" value={formData.cidade} onChange={handleChange} />
+              <input type="text" name="bairro" placeholder="Bairro" value={formData.bairro} onChange={handleChange} />
+              <input type="text" name="rua" placeholder="Rua" value={formData.rua} onChange={handleChange} />
+              <input type="text" name="numero" placeholder="Número" value={formData.numero} onChange={handleChange} />
+              <input type="text" name="complemento" placeholder="Complemento" value={formData.complemento} onChange={handleChange} />
+            </div>
+          </div>
 
-            <input type="password" name="senha" placeholder="Senha" value={formData.password} onChange={handleChange} />
-            <input type="submit" className="submit-btn" value="Cadastrar Usuário" />
+          <input type="submit" className="submit-btn" value="Cadastrar Usuário" />
 
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-            {successMessage && <p className="success-message">{successMessage}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
     </div>
     </>

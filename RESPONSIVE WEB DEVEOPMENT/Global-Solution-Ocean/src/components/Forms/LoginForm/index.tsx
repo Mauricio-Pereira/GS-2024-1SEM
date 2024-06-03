@@ -52,11 +52,15 @@ const LoginForm = () => {
     return (
         <div className='form login-form'>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email do Usuário</label>
-                <input className="input" type="text" id="email" name="email" placeholder="email@email.com" value={email} onChange={handleInputChange} />
-
-                <label htmlFor='password'>Senha</label>
-                <input className="input" type="password" id="password" name="password" placeholder="Digite sua senha aqui" value={password} onChange={handleInputChange} />
+                <div className='email-box'>
+                    <label htmlFor='email'>Email do Usuário</label>
+                    <input className="input" type="text" id="email" name="email" placeholder="email@email.com" value={email} onChange={handleInputChange} />
+                </div>
+                
+                <div className='password-box'>
+                    <label htmlFor='password'>Senha</label>
+                    <input className="input" type="password" id="password" name="password" placeholder="Digite sua senha aqui" value={password} onChange={handleInputChange} />
+                </div>
 
                 <input type="submit" className="submit-btn" value="Login" />
 

@@ -5,7 +5,8 @@ const ParagraphSection = (props: ParagraphSectionProps) => {
     return(
         <>
         <section className="section paragraph-section">
-            <div className="container">
+            <div className={"container" + " " + props.style}>
+                <h1>{props.title}</h1>
                 <p>{props.text}</p>
             </div>
         </section>
