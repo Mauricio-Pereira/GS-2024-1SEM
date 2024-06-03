@@ -129,7 +129,7 @@ def menu_secundario_producao_global():
     print(Style.BRIGHT + "Menu Secundário - Produção Global de Plástico")
     print(Fore.GREEN + "-" * 30)
     print(Fore.WHITE + "1 - Visualizar todos os dados")
-    print("2 - Visualizar por ano")
+    print("2 - Filtrar por ano")
     print(Fore.GREEN + "\n" + "-" * 30 + "\n" + Style.RESET_ALL)
 
 
@@ -139,7 +139,7 @@ def menu_secundario_despejo_plastico():
     print(Style.BRIGHT + "Menu Secundário - Despejo de Plástico")
     print(Fore.YELLOW + "-" * 30)
     print(Fore.WHITE + "1 - Visualizar todos os dados")
-    print("2 - Visualizar por país")
+    print("2 - Filtrar por país")
     print(Fore.YELLOW + "\n" + "-" * 30 + "\n" + Style.RESET_ALL)
 
 
