@@ -17,7 +17,7 @@ const KeyboardNav: React.FC<NavigationProps> = ({ children }) => {
       // Verifica se activeElement é uma instância de FocusableElement
       const activeElement = document.activeElement as FocusableElement | null;
 
-      const elements = Array.from(refContainer.current?.querySelectorAll('a, button, input') || []) as FocusableElement[];
+      const elements = Array.from(refContainer.current?.querySelectorAll('a, button, input, select') || []) as FocusableElement[];
       const focusableElements = elements.filter(el => el.focus!== undefined);
       
       if (!activeElement) {

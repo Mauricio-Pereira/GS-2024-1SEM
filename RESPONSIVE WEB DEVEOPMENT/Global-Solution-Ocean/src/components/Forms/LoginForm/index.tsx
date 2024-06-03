@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import axios from 'axios';
 import { useState } from 'react';
 import '../forms_style.css';
@@ -63,6 +64,8 @@ const LoginForm = () => {
                 </div>
 
                 <input type="submit" className="submit-btn" value="Login" />
+                
+                <span>Não possui cadastro? <Link href="/sign-in-page">Click aqui</Link></span>
 
                 {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Exibe a mensagem de erro */}
             </form>

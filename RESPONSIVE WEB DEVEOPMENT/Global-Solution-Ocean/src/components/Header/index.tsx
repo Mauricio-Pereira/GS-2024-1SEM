@@ -9,7 +9,6 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <Image src="/images/logo.png" width={50} height={50} alt="Logo da Empresa"/>
           <h1>Blue Horizon</h1>
         </div>
         <nav className="navigation">

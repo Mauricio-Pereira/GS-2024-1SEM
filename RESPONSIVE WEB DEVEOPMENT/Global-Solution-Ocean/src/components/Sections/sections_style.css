@@ -58,7 +58,7 @@
     border-radius: 0.5rem;
     min-width: 10rem;
     text-align: center;
-    transition: 0.01s;
+    transition: 0.1s;
 }
 
 .header-section .container .buttons .sign-in-button{
@@ -74,8 +74,6 @@
 .header-section .container .buttons .login-button:hover,
 .header-section .container .buttons .login-button:focus{
     background-color: #74ce5e;
-    border: 0.25rem solid #61aa4f;
-    margin: 0;
 }
 
 /*ParagraphSection*/
@@ -122,7 +120,7 @@
     margin: auto;
 }
 
-.products-section .container .search-box > p{
+.products-section .container .search-box{
     color: black;
 }
 

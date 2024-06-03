@@ -16,7 +16,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.form form span,
+.form form p,
 .form form label{
     color: white;
 }
@@ -25,14 +25,11 @@
     font-size: 0.75rem;
 }
 
-.form form input{
+.form form input,
+.form form select{
     margin-bottom: 0.5rem;
     padding: 0.25rem 0 0.25rem 0.25rem;
     color: black;
-}
-
-.form form input[type="date"]{
-    color: #999999;
 }
 
 .form form .user-boxes,
@@ -72,7 +69,7 @@
 }
 
 .form form .user-boxes .date-box input,
-.form form .user-boxes .usertype-box input,
+.form form .user-boxes .usertype-box select,
 .form form .user-boxes .password-box input{
     flex: 1;
 }
@@ -82,18 +79,26 @@
     background-color: #177a80;
     color: white;
     padding: 0.5rem;
-    transition: 0.01s;
-}
-
-.form form .submit-btn:hover{
-    cursor: pointer;
 }
 
 .form form .submit-btn:hover,
 .form form .submit-btn:focus{
+    cursor: pointer;
     background-color: #74ce5e;
-    border: 0.25rem solid #61aa4f;
-    margin: 0;
+}
+
+.form form span{
+    font-size: 0.8rem;
+    color: white;
+}
+
+.form form span a{
+    color: #16a3db;
+    text-decoration: 1px underline;
+}
+
+.form form span a:hover{
+    color: #0cf3e0;
 }
 
 .form form .error-message{

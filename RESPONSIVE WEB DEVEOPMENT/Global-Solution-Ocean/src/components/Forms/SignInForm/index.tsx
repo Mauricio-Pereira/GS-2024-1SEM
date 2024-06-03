@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import axios from "axios";
 import { useState } from "react";
 import "../forms_style.css"
@@ -95,7 +96,7 @@ const SignInForm: React.FC = () => {
     <div className="form sign-in-form">
         <form onSubmit={handleSubmit}>
           <div className="user-boxes">
-            <span>Informe suas informações de usuário</span>
+            <p>Informe suas informações de usuário</p>
 
             <div className="name-box">
               <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
@@ -113,12 +114,12 @@ const SignInForm: React.FC = () => {
             </div>
 
             <div className="usertype-box">
-              <input type="text" name="usertype" placeholder="Tipo de Usuário" value={formData.usertype} onChange={handleChange} />
-              {/*
-              <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
-              <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
-              <input type="ratio" name="usertype" value={formData.usertype} onChange={handleChange} />
-              */}
+              <select name="usertype" value={formData.usertype} onChange={handleChange}>
+                <option value="">*Selecione o tipo de usuário*</option>
+                <option value="Comprador">Comprador</option>
+                <option value="Administrador de Empresa">Administrador de Empresa</option>
+                <option value="Administrador de ONG">Administrador de ONG</option>
+              </select>
             </div>
             
             <div className="password-box">
@@ -127,7 +128,7 @@ const SignInForm: React.FC = () => {
           </div>
 
           <div className="address-boxes">
-            <span>Informações de Endereço</span>
+            <p>Informações de Endereço</p>
             
             <div className="address-box">
               <input type="text" name="cep" placeholder="CEP" value={formData.cep} onChange={handleChange} />
@@ -143,6 +144,8 @@ const SignInForm: React.FC = () => {
           </div>
 
           <input type="submit" className="submit-btn" value="Cadastrar Usuário" />
+
+          <span>Já possui cadastro? <Link href="/login-page">Click aqui</Link></span>
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
