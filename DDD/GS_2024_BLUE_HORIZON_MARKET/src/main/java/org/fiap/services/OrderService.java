@@ -16,7 +16,7 @@ public class OrderService {
             if(validation.containsKey(false)) {
                 throw new IllegalArgumentException(validation.get(false).toString());
             } else {
-                orderRepository.create(order);
+                orderRepository.create(order, id);
                 return true;
             }
         } catch (Exception e) {
@@ -25,6 +25,8 @@ public class OrderService {
     }
 
     public void updateById(Order order, int id){
+
+
         var validation = order.validate();
         try {
             if(validation.containsKey(false)) {

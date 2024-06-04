@@ -3,10 +3,8 @@ package org.fiap.repositories;
 import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Donation;
-import org.fiap.entities.Ngo;
-import org.fiap.entities.Order;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -102,7 +100,7 @@ public class DonationRepository extends _BaseRepositoryImpl<Donation> {
         }
     }
 
-    @Query("SELECT * FROM GS_DONATIONS")
+    @Query("SELECT * FROM GS_DONATIONS ORDER BY DONATION_ID ASC")
     public List<Donation> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {

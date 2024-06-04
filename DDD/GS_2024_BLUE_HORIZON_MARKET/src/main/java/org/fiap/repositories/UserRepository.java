@@ -4,7 +4,7 @@ import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.User;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -99,7 +99,7 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
         }
     }
 
-    @Query("SELECT * FROM GS_USERS")
+    @Query("SELECT * FROM GS_USERS ORDER BY USER_ID ASC")
     public List<User> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {
@@ -145,6 +145,8 @@ public class UserRepository extends _BaseRepositoryImpl<User> {
     public boolean deleteById(int id) {
         try {
             User deletedUser = readById(id);
+            AddressRepository addressRepository = new AddressRepository();
+            addressRepository.deleteByUserId(id);
             QueryProcessor.executeAnnotatedMethod(this, "deleteById", id);
             logger.logDeleteById(deletedUser);
             return true;

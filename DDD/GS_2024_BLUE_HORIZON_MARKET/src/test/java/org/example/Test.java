@@ -126,6 +126,5 @@ public class Test {
         ngo2.setName("UNESCO Updated");
         ngoRepository.updateById(ngo2,2);
         ngoRepository.deleteById(1);
-
     }
 }

@@ -4,13 +4,12 @@ import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.*;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -143,7 +142,7 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
         }
     }
 
-    @Query("SELECT * FROM GS_ORDERS")
+    @Query("SELECT * FROM GS_ORDERS ORDER BY ORDER_ID ASC")
     public List<Order> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {
@@ -173,6 +172,12 @@ public class OrderRepository extends _BaseRepositoryImpl<Order> {
     @Query("UPDATE GS_ORDERS SET ORDER_NUMBER = ?, TOTAL_AMOUNT = ?, DONATION_AMOUNT = ?, MAINTENANCE_AMOUNT = ?, ORDER_STATUS = ?, UPDATED_AT = SYSTIMESTAMP WHERE ORDER_ID = ?")
     public boolean updateById(Order order, int orderId) {
         try {
+            OrderItemRepository orderItemRepository = new OrderItemRepository();
+            List<OrderItem> orderItems = orderItemRepository.readByOrderId(orderId);
+            for (OrderItem item : orderItems) {
+                order.getItems().add(item);
+            }
+            order.recalculateAmounts();
             QueryProcessor.executeAnnotatedMethod(this, "updateById",
                     order.getOrderNumber(),
                     order.getTotalAmount(),

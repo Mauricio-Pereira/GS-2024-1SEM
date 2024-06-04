@@ -1,4 +1,4 @@
-package org.fiap.utils;
+package org.fiap.infrastructure;
 
 import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;

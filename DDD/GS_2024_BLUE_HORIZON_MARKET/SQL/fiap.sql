@@ -7,7 +7,6 @@ select * from GS_ORDER_ITEMS;
 select * from GS_NGOS;
 select * from GS_DONATIONS;
 
-*/
 drop table GS_USERS cascade constraints;
 drop table GS_ADDRESSES cascade constraints;
 drop table GS_COMPANIES cascade constraints;

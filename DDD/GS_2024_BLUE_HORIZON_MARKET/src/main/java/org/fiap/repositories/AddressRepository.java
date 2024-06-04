@@ -1,22 +1,17 @@
 package org.fiap.repositories;
 
-import oracle.sql.NUMBER;
 import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Address;
-import org.fiap.entities.Product;
-import org.fiap.entities.User;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class AddressRepository extends _BaseRepositoryImpl<Address>{
     Log4jLogger<Address> logger = new Log4jLogger<>(Address.class);
@@ -116,7 +111,7 @@ public class AddressRepository extends _BaseRepositoryImpl<Address>{
     }
 
 
-    @Query("SELECT * FROM GS_ADDRESSES")
+    @Query("SELECT * FROM GS_ADDRESSES ORDER BY ADDRESS_ID ASC")
     public List<Address> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {
@@ -171,8 +166,14 @@ public class AddressRepository extends _BaseRepositoryImpl<Address>{
     }
 
 
-
-
-
-
+    @Query("DELETE FROM GS_ADDRESSES WHERE GS_USERS_USER_ID = ?")
+    public boolean deleteByUserId(int id) {
+        try {
+            QueryProcessor.executeAnnotatedMethod(this, "deleteByUserId", id);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error deleting address by user id: " + e.getMessage());
+        }
+    }
 }

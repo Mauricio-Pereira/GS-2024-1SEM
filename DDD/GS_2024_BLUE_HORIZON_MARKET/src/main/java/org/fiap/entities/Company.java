@@ -1,8 +1,7 @@
 package org.fiap.entities;
 
 import org.fiap.repositories.UserRepository;
-import org.fiap.utils.ReceitaWsUtil;
-import org.fiap.utils.ViaCepValidator;
+import org.fiap.infrastructure.ReceitaWsUtil;
 
 import java.time.LocalDateTime;
 import java.util.List;

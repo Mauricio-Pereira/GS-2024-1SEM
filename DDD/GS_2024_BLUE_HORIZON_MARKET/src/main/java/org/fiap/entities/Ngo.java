@@ -45,6 +45,8 @@ public class Ngo extends _BaseEntity {
 
     public void setContactUser(User contactUser) {
         this.contactUser = contactUser;
+        this.contactEmail = contactUser.getEmail();
+        this.phone = contactUser.getPhone();
         this.setUpdatedAt(LocalDateTime.now());
     }
 

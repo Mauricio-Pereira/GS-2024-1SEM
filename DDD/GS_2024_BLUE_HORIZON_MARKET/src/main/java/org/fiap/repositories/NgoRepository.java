@@ -4,9 +4,8 @@ import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Donation;
 import org.fiap.entities.Ngo;
-import org.fiap.entities.User;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -115,7 +114,7 @@ public class NgoRepository extends _BaseRepositoryImpl<Ngo> {
         }
     }
 
-    @Query("SELECT * FROM GS_NGOS")
+    @Query("SELECT * FROM GS_NGOS ORDER BY NGO_ID ASC")
     public List<Ngo> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {

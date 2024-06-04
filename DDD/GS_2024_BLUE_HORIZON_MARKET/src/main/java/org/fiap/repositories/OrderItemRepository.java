@@ -5,7 +5,7 @@ import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Order;
 import org.fiap.entities.OrderItem;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -106,14 +106,14 @@ public class OrderItemRepository extends _BaseRepositoryImpl<OrderItem> {
     }
 
 
-    @Query("SELECT * FROM GS_ORDER_ITEMS")
+    @Query("SELECT * FROM GS_ORDER_ITEMS ORDER BY ORDER_ITEM_ID ASC")
     public List<OrderItem> readAll() {
         logger.logReadAll();
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {
                 OrderItem orderItem = new OrderItem(
                         rs.getInt("ORDER_ITEM_ID"),
-                        null,
+                        new OrderRepository().readById(rs.getInt("ORDER_ID")),
                         new ProductRepository().readById(rs.getInt("PRODUCT_ID")),
                         rs.getInt("QUANTITY")
                 );
@@ -127,6 +127,7 @@ public class OrderItemRepository extends _BaseRepositoryImpl<OrderItem> {
             throw new RuntimeException("Error reading all order items: " + e.getMessage());
         }
     }
+
 
     @Query("UPDATE GS_ORDER_ITEMS SET ORDER_ID = ?, PRODUCT_ID = ?, QUANTITY = ?, PRICE = ?, UPDATED_AT = CURRENT_TIMESTAMP WHERE ORDER_ITEM_ID = ?")
     public boolean updateById(OrderItem orderItem, int id, int orderId, int productId) {

@@ -4,7 +4,7 @@ import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Product;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -103,7 +103,7 @@ public class ProductRepository extends _BaseRepositoryImpl<Product> {
     }
 
 
-    @Query("SELECT * FROM GS_PRODUCTS")
+    @Query("SELECT * FROM GS_PRODUCTS ORDER BY PRODUCT_ID ASC")
     public List<Product> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {

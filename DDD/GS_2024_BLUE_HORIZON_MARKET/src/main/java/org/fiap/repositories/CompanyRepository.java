@@ -4,7 +4,7 @@ import org.fiap.annotations.Query;
 import org.fiap.connection.DatabaseConnection;
 import org.fiap.entities.Company;
 import org.fiap.utils.Log4jLogger;
-import org.fiap.utils.QueryProcessor;
+import org.fiap.infrastructure.QueryProcessor;
 
 import java.sql.*;
 import java.util.HashMap;
@@ -102,7 +102,7 @@ public class CompanyRepository extends _BaseRepositoryImpl<Company> {
         }
     }
 
-    @Query("SELECT * FROM GS_COMPANIES")
+    @Query("SELECT * FROM GS_COMPANIES ORDER BY COMPANY_ID ASC")
     public List<Company> readAll() {
         try {
             return QueryProcessor.executeSelectQuery(this, rs -> {

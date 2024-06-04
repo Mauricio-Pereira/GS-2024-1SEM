@@ -1,6 +1,6 @@
 package org.fiap.entities;
 
-import org.fiap.utils.ViaCepValidator;
+import org.fiap.infrastructure.ViaCepValidator;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

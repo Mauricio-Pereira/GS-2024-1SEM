@@ -167,9 +167,6 @@ public class Order extends _BaseEntity {
             validation.put(false, "Status do pedido não pode ser vazio");
         }
 
-        if (items == null || items.isEmpty()) {
-            validation.put(false, "Pedido sem itens");
-        }
-        return validation;
+               return validation;
     }
 }
