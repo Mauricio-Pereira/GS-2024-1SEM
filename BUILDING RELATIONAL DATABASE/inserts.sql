@@ -1,171 +1,236 @@
--- Inserir dados na tabela gs_users com tipos ajustados e novos usuários admin_ngo
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user1@example.com', 'password123', 'buyer', '12345-678', '100', 'Apt 101');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user2@example.com', 'password123', 'admin_company', '23456-789', '200', 'Apt 202');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user3@example.com', 'password123', 'buyer', '34567-890', '300', 'Apt 303');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user4@example.com', 'password123', 'admin_company', '45678-901', '400', 'Apt 404');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user5@example.com', 'password123', 'admin_ngo', '56789-012', '500', 'Apt 505');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user6@example.com', 'password123', 'admin_ngo', '67890-123', '600', 'Apt 606');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user7@example.com', 'password123', 'admin_ngo', '78901-234', '700', 'Apt 707');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user8@example.com', 'password123', 'admin_ngo', '89012-345', '800', 'Apt 808');
-INSERT INTO gs_users (email, password, user_type, cep, address_number, address_complement)
-VALUES ('user9@example.com', 'password123', 'admin_ngo', '90123-456', '900', 'Apt 909');
+--USERS
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('John', 'Doe', 'john.doe@example.com', 'password123', 'buyer', '123456789', TO_DATE('1990-01-01', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Jane', 'Smith', 'jane.smith@example.com', 'password123', 'admin_company', '987654321', TO_DATE('1985-05-15', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Bob', 'Johnson', 'bob.johnson@example.com', 'password123', 'admin_ngo', '456123789', TO_DATE('1975-10-20', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Alice', 'Brown', 'alice.brown@example.com', 'password123', 'buyer', '321654987', TO_DATE('1992-03-10', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Charlie', 'Davis', 'charlie.davis@example.com', 'password123', 'admin_company', '654987321', TO_DATE('1988-07-25', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Diana', 'Evans', 'diana.evans@example.com', 'password123', 'admin_ngo', '789123456', TO_DATE('1979-12-05', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Ethan', 'Foster', 'ethan.foster@example.com', 'password123', 'buyer', '213546879', TO_DATE('1995-11-30', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('Fiona', 'Green', 'fiona.green@example.com', 'password123', 'admin_company', '879321654', TO_DATE('1983-02-17', 'YYYY-MM-DD'));
+INSERT INTO GS_USERS (NOME, SOBRENOME, EMAIL, PASSWORD, USER_TYPE, PHONE, BIRTHDATE)
+VALUES ('George', 'Harris', 'george.harris@example.com', 'password123', 'admin_ngo', '147258369', TO_DATE('1969-08-22', 'YYYY-MM-DD'));
 
 
--- Inserir dados na tabela gs_companies
-INSERT INTO gs_companies (admin_id, name, phone, website, verification_status)
-VALUES (2, 'Company A', '123-456-7890', 'www.companya.com', 'verified');
-INSERT INTO gs_companies (admin_id, name, phone, website, verification_status)
-VALUES (4, 'Company B', '234-567-8901', 'www.companyb.com', 'pending');
-INSERT INTO gs_companies (admin_id, name, phone, website, verification_status)
-VALUES (2, 'Company C', '345-678-9012', 'www.companyc.com', 'verified');
-INSERT INTO gs_companies (admin_id, name, phone, website, verification_status)
-VALUES (4, 'Company D', '456-789-0123', 'www.companyd.com', 'verified');
-INSERT INTO gs_companies (admin_id, name, phone, website, verification_status)
-VALUES (2, 'Company E', '567-890-1234', 'www.companye.com', 'pending');
+--ADDRESSES
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (1, '12345-678', 'Brazil', 'SP', 'São Paulo', 'Centro', 'Rua A', '123', 'Apt 101');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (2, '87654-321', 'Brazil', 'RJ', 'Rio de Janeiro', 'Zona Sul', 'Avenida B', '456', 'Suite 202');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (3, '11223-445', 'Brazil', 'MG', 'Belo Horizonte', 'Savassi', 'Rua C', '789', 'Apt 303');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (4, '22334-556', 'Brazil', 'RS', 'Porto Alegre', 'Moinhos de Vento', 'Rua D', '101', 'Casa 1');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (5, '33445-667', 'Brazil', 'PR', 'Curitiba', 'Centro Cívico', 'Avenida E', '202', 'Cobertura');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (6, '44556-778', 'Brazil', 'BA', 'Salvador', 'Barra', 'Rua F', '303', 'Casa 2');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (7, '55667-889', 'Brazil', 'PE', 'Recife', 'Boa Viagem', 'Avenida G', '404', 'Apt 404');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (8, '66778-990', 'Brazil', 'CE', 'Fortaleza', 'Meireles', 'Rua H', '505', 'Casa 3');
+INSERT INTO GS_ADDRESSES (USER_ID, ZIP_CODE, COUNTRY, STATE, CITY, NEIGHBORHOOD, STREET, "NUMBER", COMPLEMENT)
+VALUES (9, '77889-101', 'Brazil', 'SC', 'Florianópolis', 'Centro', 'Rua I', '606', 'Apt 505');
+
+--COMPANIES
+INSERT INTO GS_COMPANIES (NAME, CNPJ, PHONE, WEBSITE, ADMIN_ID, VERIFICATION_STATUS)
+VALUES ('Tech Corp', '12.345.678/0001-90', '123456789', 'https://www.techcorp.com', 2, 'verified');
+INSERT INTO GS_COMPANIES (NAME, CNPJ, PHONE, WEBSITE, ADMIN_ID, VERIFICATION_STATUS)
+VALUES ('Health Inc', '98.765.432/0001-01', '987654321', 'https://www.healthinc.com', 2, 'unverified');
+INSERT INTO GS_COMPANIES (NAME, CNPJ, PHONE, WEBSITE, ADMIN_ID, VERIFICATION_STATUS)
+VALUES ('Edu Solutions', '21.654.987/0001-32', '321654987', 'https://www.edusolutions.com', 5, 'verified');
+INSERT INTO GS_COMPANIES (NAME, CNPJ, PHONE, WEBSITE, ADMIN_ID, VERIFICATION_STATUS)
+VALUES ('Finance Group', '54.321.987/0001-54', '654987321', 'https://www.financegroup.com', 8, 'unverified');
 
 
--- Inserir dados na tabela gs_products
-INSERT INTO gs_products (company_id, name, description, price, stock)
-VALUES (1, 'Product A', 'Description A', 10.00, 100);
-INSERT INTO gs_products (company_id, name, description, price, stock)
-VALUES (2, 'Product B', 'Description B', 20.00, 200);
-INSERT INTO gs_products (company_id, name, description, price, stock)
-VALUES (3, 'Product C', 'Description C', 30.00, 300);
-INSERT INTO gs_products (company_id, name, description, price, stock)
-VALUES (4, 'Product D', 'Description D', 40.00, 400);
-INSERT INTO gs_products (company_id, name, description, price, stock)
-VALUES (5, 'Product E', 'Description E', 50.00, 500);
+--PRODUCTS
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product A', 'Description for product A', 100.00, 5500, 1);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product B', 'Description for product B', 150.00, 3300, 1);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product C', 'Description for product C', 200.00, 2200, 2);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product D', 'Description for product D', 250.00, 1100, 2);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product E', 'Description for product E', 300.00, 4400, 3);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product F', 'Description for product F', 350.00, 3600, 3);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product G', 'Description for product G', 400.00, 2500, 4);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product H', 'Description for product H', 450.00, 5000, 4);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product I', 'Description for product I', 500.00, 1500, 1);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product J', 'Description for product J', 550.00, 3000, 2);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product K', 'Description for product K', 600.00, 1200, 3);
+INSERT INTO GS_PRODUCTS (NAME, DESCRIPTION, PRICE, STOCK, COMPANY_ID)
+VALUES ('Product L', 'Description for product L', 650.00, 3500, 4);
 
 
--- Inserir dados na tabela gs_orders
-INSERT INTO gs_orders (order_number, buyer_id, total_amount, donation_amount, maintenance_amount, order_status)
-VALUES ('ORD001', 1, 100.00, 8.00, 4.00, 'paid');
-INSERT INTO gs_orders (order_number, buyer_id, total_amount, donation_amount, maintenance_amount, order_status)
-VALUES ('ORD002', 3, 200.00, 16.00, 8.00, 'pending');
-INSERT INTO gs_orders (order_number, buyer_id, total_amount, donation_amount, maintenance_amount, order_status)
-VALUES ('ORD003', 5, 300.00, 24.00, 12.00, 'canceled');
-INSERT INTO gs_orders (order_number, buyer_id, total_amount, donation_amount, maintenance_amount, order_status)
-VALUES ('ORD004', 1, 400.00, 32.00, 16.00, 'paid');
-INSERT INTO gs_orders (order_number, buyer_id, total_amount, donation_amount, maintenance_amount, order_status)
-VALUES ('ORD005', 3, 500.00, 40.00, 20.00, 'pending');
-
-
--- Inserir dados na tabela gs_ngos
-INSERT INTO gs_ngos (contact_id, name, mission, phone, website, contact_email)
-VALUES (1, 'NGO A', 'Mission A', '123-456-7890', 'www.ngoa.com', 'contact@ngoa.com');
-INSERT INTO gs_ngos (contact_id, name, mission, phone, website, contact_email)
-VALUES (3, 'NGO B', 'Mission B', '234-567-8901', 'www.ngob.com', 'contact@ngob.com');
-INSERT INTO gs_ngos (contact_id, name, mission, phone, website, contact_email)
-VALUES (1, 'NGO C', 'Mission C', '345-678-9012', 'www.ngoc.com', 'contact@ngoc.com');
-INSERT INTO gs_ngos (contact_id, name, mission, phone, website, contact_email)
-VALUES (3, 'NGO D', 'Mission D', '456-789-0123', 'www.ngod.com', 'contact@ngod.com');
-INSERT INTO gs_ngos (contact_id, name, mission, phone, website, contact_email)
-VALUES (1, 'NGO E', 'Mission E', '567-890-1234', 'www.ngoe.com', 'contact@ngoe.com');
-
-
--- Inserir dados na tabela gs_orderitems
-INSERT INTO gs_orderitems (order_id, product_id, quantity, price)
-VALUES (1, 1, 2, 10.00);
-INSERT INTO gs_orderitems (order_id, product_id, quantity, price)
-VALUES (2, 2, 4, 20.00);
-INSERT INTO gs_orderitems (order_id, product_id, quantity, price)
-VALUES (3, 3, 6, 30.00);
-INSERT INTO gs_orderitems (order_id, product_id, quantity, price)
-VALUES (4, 4, 8, 40.00);
-INSERT INTO gs_orderitems (order_id, product_id, quantity, price)
-VALUES (5, 5, 10, 50.00);
-
--- Inserir dados na tabela gs_donations
-INSERT INTO gs_donations (order_id, amount, ngo_id)
-VALUES (1, 8.00, 1);
-INSERT INTO gs_donations (order_id, amount, ngo_id)
-VALUES (2, 16.00, 2);
-INSERT INTO gs_donations (order_id, amount, ngo_id)
-VALUES (3, 24.00, 2);
-INSERT INTO gs_donations (order_id, amount, ngo_id)
-VALUES (4, 32.00, 4);
-INSERT INTO gs_donations (order_id, amount, ngo_id)
-VALUES (5, 40.00, 4);
-
--- Relatório 1.1: Lista todos os usuários ordenados pelo email em ordem crescente
-SELECT * FROM gs_users
-ORDER BY email ASC;
-
--- Relatório 1.2: Lista todas as empresas ordenadas pelo nome em ordem crescente
-SELECT * FROM gs_companies
-ORDER BY name ASC;
-
-
--- Relatório 2.1: Seleciona produtos com preços entre 20 e 40, e cujos nomes começam com 'Product'
-SELECT * FROM gs_products
-WHERE price BETWEEN 20 AND 40
-AND name LIKE 'Product%';
-
--- Relatório 2.2: Seleciona usuários cujo CEP está entre '30000-000' e '60000-000', e cujos emails contêm 'example'
-SELECT * FROM gs_users
-WHERE cep BETWEEN '30000-000' AND '60000-000'
-AND email LIKE '%example%';
-
-
--- Relatório 3.1: Converte os nomes das ONGs para maiúsculas e lista juntamente com o telefone
-SELECT UPPER(name) AS upper_name, phone FROM gs_ngos;
-
--- Relatório 3.2: Converte os nomes das empresas para maiúsculas e lista juntamente com o site
-SELECT UPPER(name) AS upper_name, website FROM gs_companies;
-
-
--- Relatório 4.1: Extrai o ano de criação das empresas e lista juntamente com o nome
-SELECT EXTRACT(YEAR FROM created_at) AS year_created, name 
-FROM gs_companies;
-
--- Relatório 4.2: Extrai o mês de criação dos usuários e lista juntamente com o email
-SELECT EXTRACT(MONTH FROM created_at) AS month_created, email 
-FROM gs_users;
-
-
--- Relatório 5.1: Conta o número de usuários agrupados por tipo de usuário
-SELECT user_type, COUNT(*) AS count 
-FROM gs_users
-GROUP BY user_type;
-
--- Relatório 5.2: Soma os preços dos produtos agrupados por empresa
-SELECT company_id, SUM(price) AS total_price
-FROM gs_products
-GROUP BY company_id;
-
-
--- Relatório 6.1: Lista o número do pedido, email do comprador e valor total da compra, usando junção de equivalência entre gs_orders e gs_users
-SELECT o.order_number, u.email, o.total_amount
-FROM gs_orders o
-JOIN gs_users u ON o.buyer_id = u.user_id;
-
--- Relatório 6.2: Lista o nome do produto, nome da empresa e quantidade em estoque, usando junção de equivalência entre gs_products e gs_companies
-SELECT p.name AS product_name, c.name AS company_name, p.stock
-FROM gs_products p
-JOIN gs_companies c ON p.company_id = c.company_id;
-
-
--- Relatório 7.1: Lista os produtos que não têm correspondência na tabela gs_orderitems (produtos que não foram vendidos)
-SELECT p.name AS product_name, p.price
-FROM gs_products p
-LEFT JOIN gs_orderitems oi ON p.product_id = oi.product_id
-WHERE oi.product_id IS NULL;
-
--- Relatório 7.2: Lista as ONGs que não têm correspondência na tabela gs_donations (ONGs que não receberam doações)
-SELECT n.name AS ngo_name, n.contact_email
-FROM gs_ngos n
-LEFT JOIN gs_donations d ON n.ngo_id = d.ngo_id
-WHERE d.ngo_id IS NULL;
+--ORDERS
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1001', 1, 250.00, 20.00, 10.00, 'paid');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1002', 4, 300.00, 24.00, 12.00, 'pending');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1003', 4, 150.00, 15.00, 5.00, 'paid');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1004', 4, 400.00, 30.00, 20.00, 'paid');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1005', 4, 500.00, 50.00, 25.00, 'pending');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1006', 4, 600.00, 60.00, 30.00, 'canceled');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1007', 7, 700.00, 70.00, 35.00, 'paid');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1008', 7, 800.00, 80.00, 40.00, 'paid');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1009', 7, 900.00, 90.00, 45.00, 'pending');
+INSERT INTO GS_ORDERS (ORDER_NUMBER, BUYER_ID, TOTAL_AMOUNT, DONATION_AMOUNT, MAINTENANCE_AMOUNT, ORDER_STATUS)
+VALUES ('ORD-1010', 7, 1000.00, 100.00, 50.00, 'paid');
 
 
 
+--ORDER_ITEMS
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (1, 2, 1, 150.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (2, 3, 1, 200.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (3, 2, 1, 100.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (4, 4, 1, 250.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (5, 5, 2, 300.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (6, 6, 1, 350.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (7, 7, 1, 400.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (8, 8, 1, 450.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (9, 1, 1, 100.00);
+INSERT INTO GS_ORDER_ITEMS (ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+VALUES (10, 2, 1, 150.00);
 
+
+
+--NGOS
+INSERT INTO GS_NGOS (CONTACT_USER_ID, NAME, MISSION, PHONE, WEBSITE, CONTACT_EMAIL, TOTAL_DONATIONS)
+VALUES (3, 'Helping Hands', 'Providing help to those in need', '123456789', 'https://www.helpinghands.org', 'contact@helpinghands.org', 10000.00);
+INSERT INTO GS_NGOS (CONTACT_USER_ID, NAME, MISSION, PHONE, WEBSITE, CONTACT_EMAIL, TOTAL_DONATIONS)
+VALUES (3, 'Goodwill', 'Supporting the community', '987654321', 'https://www.goodwill.org', 'contact@goodwill.org', 15000.00);
+
+
+--NGOS DONATIONS
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (1, 10.00, 1);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (2, 12.00, 1);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (3, 15.00, 1);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (4, 20.00, 1);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (5, 25.00, 1);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (6, 30.00, 2);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (7, 35.00, 2);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (8, 40.00, 2);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (9, 45.00, 2);
+INSERT INTO GS_DONATIONS (ORDER_ID, AMOUNT, NGO_ID)
+VALUES (10, 50.00, 2);
+commit;
+
+-- Relatórios usando classificação crescente de dados
+-- Listar todos os usuários ordenados pelo sobrenome
+SELECT * FROM GS_USERS
+ORDER BY SOBRENOME ASC;
+
+-- Listar todos os produtos ordenados pelo preço
+SELECT * FROM GS_PRODUCTS
+ORDER BY PRICE ASC;
+
+
+
+-- Relatórios usando BETWEEN e LIKE
+-- Listar todos os pedidos com valor total entre 200 e 600
+SELECT * FROM GS_ORDERS
+WHERE TOTAL_AMOUNT BETWEEN 200.00 AND 600.00;
+-- Listar todas as empresas cujo nome começa com 'T'
+SELECT * FROM GS_COMPANIES
+WHERE NAME LIKE 'T%';
+
+
+
+-- Relatórios usando função caractere
+-- Exibir os nomes dos usuários em letras maiúsculas
+SELECT UPPER(NOME) AS NOME_MAIUSCULO, UPPER(SOBRENOME) AS SOBRENOME_MAIUSCULO
+FROM GS_USERS;
+-- Exibir a concatenação do nome e sobrenome dos usuários
+SELECT NOME || ' ' || SOBRENOME AS NOME_COMPLETO
+FROM GS_USERS;
+
+
+-- Relatórios usando função data
+-- Listar usuários com idade entre 18 e 30
+SELECT NOME, SOBRENOME, BIRTHDATE,
+       FLOOR(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) AS IDADE
+FROM GS_USERS
+WHERE FLOOR(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) BETWEEN 18 AND 30;
+-- Listar usuários com mais de 30 anos
+SELECT NOME, SOBRENOME, BIRTHDATE,
+       FLOOR(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) AS IDADE
+FROM GS_USERS
+WHERE FLOOR(MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) > 30;
+
+
+
+-- Relatórios usando GROUP BY
+-- Total de pedidos por status
+SELECT ORDER_STATUS, COUNT(*) AS TOTAL_PEDIDOS
+FROM GS_ORDERS
+GROUP BY ORDER_STATUS;
+-- Total de doações por ONG
+SELECT NGO_ID, SUM(AMOUNT) AS TOTAL_DOADO
+FROM GS_DONATIONS
+GROUP BY NGO_ID;
+
+
+
+-- Relatórios usando junção de equivalência
+-- Listar pedidos com informações do comprador
+SELECT O.ORDER_NUMBER, U.NOME, U.SOBRENOME, O.TOTAL_AMOUNT, O.ORDER_STATUS
+FROM GS_ORDERS O
+JOIN GS_USERS U ON O.BUYER_ID = U.USER_ID;
+-- Listar itens do pedido com informações do produto
+SELECT OI.ORDER_ID, P.NAME AS PRODUTO, OI.QUANTITY, OI.PRICE
+FROM GS_ORDER_ITEMS OI
+JOIN GS_PRODUCTS P ON OI.PRODUCT_ID = P.PRODUCT_ID;
+
+
+-- Relatórios usando junção de diferença
+-- Listar usuários que não possuem pedidos
+SELECT U.USER_ID, U.NOME, U.SOBRENOME
+FROM GS_USERS U
+LEFT JOIN GS_ORDERS O ON U.USER_ID = O.BUYER_ID
+WHERE O.ORDER_ID IS NULL;
+-- Listar produtos que não foram vendidos
+SELECT P.PRODUCT_ID, P.NAME
+FROM GS_PRODUCTS P
+LEFT JOIN GS_ORDER_ITEMS OI ON P.PRODUCT_ID = OI.PRODUCT_ID
+WHERE OI.ORDER_ID IS NULL;
 

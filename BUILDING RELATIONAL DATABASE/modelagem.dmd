@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelagem" id="95537474-3B6D-DD2A-A28E-2CFC48DD0F34" version="3.5">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:41:09 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>95537474-3B6D-DD2A-A28E-2CFC48DD0F34</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="6957AFD9-DFC2-6EE8-08C3-762A21A4B556">
+<designStoragePath>C:\FIAP</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

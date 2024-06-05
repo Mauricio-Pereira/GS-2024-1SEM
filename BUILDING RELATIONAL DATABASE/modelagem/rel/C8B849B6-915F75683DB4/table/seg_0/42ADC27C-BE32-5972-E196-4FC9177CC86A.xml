@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="42ADC27C-BE32-5972-E196-4FC9177CC86A" name="GS_COMPANIES">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>86273E18-6F6B-6F0A-1EBA-3D569A3A84A6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COMPANY_ID" id="AAECC3C8-6278-53DC-B27D-213F4894589A">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>8915791C-EBFD-1D1D-3F92-7C63C761DD86</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CD9BC3DB-125B-C18A-1119-9569741D91FA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="NAME" id="56B0C7E7-9D13-17FC-5F06-EC100CB5000F">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>B6759981-3D06-6A32-509B-05C2D2BC62D4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>940A08B6-6BA9-7670-AEEB-54483C8B3136</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CNPJ" id="E356BAD5-56AF-815E-E5FB-45A37A61724B">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>328E5046-5FA7-3887-4794-B97C82C6321C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2B2ED5C9-1132-E552-C210-09FA0A6A0C85</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE" id="9828D711-14FD-0A7C-8C7A-E3D449D420A7">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>37BF7DA4-8548-9B93-0FFE-C6558FEEEB44</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2B2ED5C9-1132-E552-C210-09FA0A6A0C85</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WEBSITE" id="9225776E-54EE-5B6C-B5EB-AC75956AD514">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>826009D9-D421-A20E-D461-46749F949792</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>940A08B6-6BA9-7670-AEEB-54483C8B3136</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADMIN_ID" id="8D7404DA-1B76-6126-A4B2-A8DFE5A57612">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>DEC6ABE8-97FC-0D9B-A9AD-482106901C74</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CD9BC3DB-125B-C18A-1119-9569741D91FA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="97774D0D-0076-026A-9774-B0213CED10FF" referredColumn="F76BE59A-605D-B375-8C18-B702CAEAE6EB"/>
+</associations>
+</Column>
+<Column name="VERIFICATION_STATUS" id="BDF2ED8E-CEA2-5B93-6F94-C7230B56C0B6">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>9A2D7385-726D-5978-8189-9ECBD76F4A13</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2FAA585E-A0D1-308D-5ECC-FAF2E90FD098</domain>
+<defaultValue>&apos;unverified&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="03101565-29F0-56D5-727F-80EBDE114109">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>41B034B9-091B-1C14-D4C4-6429CBB677CB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>8DFCE1AF-39C9-3BC0-1513-E7A819799A6F</domain>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="9B897B2C-16BF-3435-8E05-BD5096A9A9C3">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>27C24305-509C-C76B-589C-0B0BFED667EE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>8DFCE1AF-39C9-3BC0-1513-E7A819799A6F</domain>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED7DE6AB-82A4-64B5-F81D-D35600F6DED2" name="GS_COMPANIES_PK">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>F6D13729-214A-45D0-0FED-3A4C14371C98</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AAECC3C8-6278-53DC-B27D-213F4894589A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F763DB5-BEEC-4EAE-E456-3CCA07AE69FF" name="INDEX_1">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>534A73A8-7DF8-0F8E-24CC-F03908A06E47</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E356BAD5-56AF-815E-E5FB-45A37A61724B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="42257EDE-E1BB-3C97-C570-3096584567B1" name="GS_COMPANIES_GS_USERS_FK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D7404DA-1B76-6126-A4B2-A8DFE5A57612"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

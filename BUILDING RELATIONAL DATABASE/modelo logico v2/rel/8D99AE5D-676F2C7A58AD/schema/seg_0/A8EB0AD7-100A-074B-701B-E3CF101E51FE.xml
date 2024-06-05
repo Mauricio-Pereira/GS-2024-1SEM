@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="RM553748" directorySegmentName="seg_0" id="A8EB0AD7-100A-074B-701B-E3CF101E51FE">
-<createdBy>Mauricio</createdBy>
-<createdTime>2024-05-28 12:32:36 UTC</createdTime>
-<ownerDesignName>modelo logico v2</ownerDesignName>
-<importedID>AEB9FD33-0010-780A-000B-B1B745A2F556</importedID>
-</SchemaObject>

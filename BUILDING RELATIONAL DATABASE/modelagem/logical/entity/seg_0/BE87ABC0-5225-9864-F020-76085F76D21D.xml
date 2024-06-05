@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BE87ABC0-5225-9864-F020-76085F76D21D" name="GS COMPANIES">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>42ADC27C-BE32-5972-E196-4FC9177CC86A</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COMPANY ID" id="2A4368EC-0BA6-3185-DF81-18990A33482D">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>AAECC3C8-6278-53DC-B27D-213F4894589A</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CD9BC3DB-125B-C18A-1119-9569741D91FA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NAME" id="80701B0E-7C09-62C5-48DC-970F25C63A7C">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>56B0C7E7-9D13-17FC-5F06-EC100CB5000F</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>940A08B6-6BA9-7670-AEEB-54483C8B3136</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CNPJ" id="954C905A-69C8-D6F7-3FB5-7B77DD06BA79">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>E356BAD5-56AF-815E-E5FB-45A37A61724B</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2B2ED5C9-1132-E552-C210-09FA0A6A0C85</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PHONE" id="A052ADE6-CFF3-E8DA-F374-248FA9C96E37">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>9828D711-14FD-0A7C-8C7A-E3D449D420A7</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2B2ED5C9-1132-E552-C210-09FA0A6A0C85</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="WEBSITE" id="B9EDDC26-A36C-E854-EDA1-3C4661EDFAE2">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>9225776E-54EE-5B6C-B5EB-AC75956AD514</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>940A08B6-6BA9-7670-AEEB-54483C8B3136</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ADMIN ID" id="C1CDAFAB-1AC6-7FB4-165D-513AB5815B85">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>637695D3-480A-BEDE-C864-29CDE3AB9C98</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<referedAttribute>C566DA98-9760-5E44-65F9-2BB905C0EDDB</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CD9BC3DB-125B-C18A-1119-9569741D91FA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="VERIFICATION STATUS" id="AEE51176-858E-5627-8AD6-E67A3AC8D674">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>BDF2ED8E-CEA2-5B93-6F94-C7230B56C0B6</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2FAA585E-A0D1-308D-5ECC-FAF2E90FD098</domain>
+<defaultValue>&apos;unverified&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CREATED AT" id="041FB0DB-1487-50B0-39F6-1ACBC85A4BA2">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>03101565-29F0-56D5-727F-80EBDE114109</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>8DFCE1AF-39C9-3BC0-1513-E7A819799A6F</domain>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="UPDATED AT" id="1080EEB0-7ABF-1052-0342-9D9C5EDBC564">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>9B897B2C-16BF-3435-8E05-BD5096A9A9C3</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>8DFCE1AF-39C9-3BC0-1513-E7A819799A6F</domain>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BF25C183-8469-C2FB-78BD-BB3B75016E39" name="GS COMPANIES PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>ED7DE6AB-82A4-64B5-F81D-D35600F6DED2</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2A4368EC-0BA6-3185-DF81-18990A33482D</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="AE7E2FF4-4209-EAB1-46DE-2E0F6157D0F8" name="INDEX 1">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>4F763DB5-BEEC-4EAE-E456-3CCA07AE69FF</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>954C905A-69C8-D6F7-3FB5-7B77DD06BA79</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

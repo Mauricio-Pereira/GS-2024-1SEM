@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="GS_DONATIONS_GS_ORDERS_FK" directorySegmentName="seg_0" id="DDC5E095-A1B3-67CC-279F-F8B1AE54E267">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>D353FF16-DD0B-6828-A77E-8CA9688A617F</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<sourcePk>074416E8-70C3-0ABD-80B9-80E8D1B47AB3</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>977FFC23-EFCC-C9EB-B941-73B63AA1BD31</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5E82B4EA-F801-46D9-EA7A-6ECDE4277172</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>
