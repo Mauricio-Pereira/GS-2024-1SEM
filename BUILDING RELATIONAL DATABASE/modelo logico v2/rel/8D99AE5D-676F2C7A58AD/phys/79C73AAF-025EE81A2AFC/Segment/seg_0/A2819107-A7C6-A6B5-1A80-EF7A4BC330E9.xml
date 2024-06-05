@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<SegmentOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.SegmentOraclev10g" name="Storage1" directorySegmentName="seg_0" id="A2819107-A7C6-A6B5-1A80-EF7A4BC330E9">
-<createdBy>Mauricio</createdBy>
-<createdTime>2024-05-28 12:32:03 UTC</createdTime>
-<ownerDesignName>modelo logico v2</ownerDesignName>
-<initrans>2</initrans>
-<maxTrans>255</maxTrans>
-</SegmentOraclev10g>

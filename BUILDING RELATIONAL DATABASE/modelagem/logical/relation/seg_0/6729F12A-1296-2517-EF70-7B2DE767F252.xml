@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="GS_NGOS_GS_USERS_FK" directorySegmentName="seg_0" id="6729F12A-1296-2517-EF70-7B2DE767F252">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:45:40 UTC</createdTime>
+<generatorID>D77BCF4D-9904-0B92-5B3D-7BEEEB2D9346</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="C8B849B6-B0C7-9D18-6B77-915F75683DB4" value="true"/>
+</engineerTo>
+<sourcePk>995211F3-922D-4C34-2DF0-3EC1A74F3131</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B081E93D-01F9-C97B-5EEA-3FBB7DE82B21</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6139CAD4-D570-A73F-DB2A-235237998ADC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

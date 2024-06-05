@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="23F5E219-DA6E-9B7A-A793-EDBFD2445956" containerWithKeyObject="4F9B8EC4-923A-26B3-5816-D6A3364819CF" localFKIndex="010844C4-025B-6F9D-4AD5-227ED0B7F275" name="GS_DONATIONS_GS_NGOS_FK">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>5A412E5F-9DDE-8A03-3BC8-058FEE5E15B7</importedID>
+<referredTableLongName>GS_NGOS</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>CAE3C22D-7732-5102-7F63-3DBDC7534FC1</referredTableID>
+<keyObject>987FF969-F0DA-15AE-CBEB-60102844A353</keyObject>
+<referredKeyID>987FF969-F0DA-15AE-CBEB-60102844A353</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>NGO_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

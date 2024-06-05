@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C1944F90-EF87-95DF-B58B-CFAE49DFEF9A" containerWithKeyObject="F733F5FE-0CDF-BDAB-293A-3073324AF5AD" localFKIndex="7C8350B4-A5F0-6DD7-ADE0-1699760C3D2D" name="GS_ADDRESSES_GS_USERS_FK">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>727E809E-CA34-D8A2-940B-A3CA5073C431</importedID>
+<referredTableLongName>GS_USERS</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>1D19F468-3F28-9099-A79B-62357964511F</referredTableID>
+<keyObject>4D81D545-D037-B1B8-49CC-09FBE33354DE</keyObject>
+<referredKeyID>4D81D545-D037-B1B8-49CC-09FBE33354DE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>USER_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

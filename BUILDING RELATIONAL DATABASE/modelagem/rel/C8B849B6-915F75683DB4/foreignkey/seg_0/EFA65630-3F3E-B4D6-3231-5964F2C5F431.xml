@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EFA65630-3F3E-B4D6-3231-5964F2C5F431" containerWithKeyObject="FCF5E094-B5AF-83B3-54B0-BEBE47191D45" localFKIndex="366AFDDD-2456-1BD8-880A-D7A6CF9752BD" name="GS_ORDER_ITEMS_GS_PRODUCTS_FK">
+<sourceDDLFile>FIAP.sql</sourceDDLFile>
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-06-05 16:42:27 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>A6D32720-D84F-2BDF-A22B-7EAFCA793348</importedID>
+<referredTableLongName>GS_PRODUCTS</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>97EBE86C-4805-4AE3-CED2-60B49FADDEDA</referredTableID>
+<keyObject>5CF32E75-E3C5-4DE3-E21B-3049DA0EDCFA</keyObject>
+<referredKeyID>5CF32E75-E3C5-4DE3-E21B-3049DA0EDCFA</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>PRODUCT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
