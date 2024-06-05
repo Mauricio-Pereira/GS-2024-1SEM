@@ -5,7 +5,7 @@ import '../sections_style.css';
 const HeaderSection = () => {
     return(
         <>
-        <section className="section header-section" id="background-image">
+        <section className="section header-section">
             <div className="container">
                 <div className="title">
                     <span>Blue CommerceTech</span>

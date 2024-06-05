@@ -9,9 +9,9 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <h1>Blue Horizon</h1>
+          <Link href="/" className="blue-logo"><h1>Blue Horizon</h1></Link>
         </div>
-        <nav className="navigation">
+        <nav className="links-nav">
           <ul className="links-list">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/products">Produtos</Link></li>
@@ -19,10 +19,12 @@ const Header = () => {
             <li><Link href="/contact">Contato</Link></li>
           </ul>
         </nav>
-        <div className="user-info">
-          <Link href="/sign-in-page" className="sign-in-button">Cadastre-se</Link>
-          <Link href="/login-page" className="login-button">Login</Link>
-        </div>
+        <nav className="info-nav">
+          <ul className="info-list">
+            <li><Link href="/login-page" className="login-button"><i className="fab fa-user-profile"></i>Login</Link></li>
+            <li><Link href="/sign-in-page" className="sign-in-button">Cadastre-se</Link></li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

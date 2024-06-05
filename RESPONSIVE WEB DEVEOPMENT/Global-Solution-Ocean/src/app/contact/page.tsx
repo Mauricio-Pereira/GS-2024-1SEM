@@ -12,7 +12,7 @@ export default function Contact() {
         Reprehenderit consequuntur voluptatum voluptates dicta numquam odio obcaecati dignissimos pariatur nesciunt, commodi nobis illum laudantium debitis perferendis, laborum fuga expedita. Quam explicabo similique repellendus repudiandae eum asperiores! Explicabo, maxime ratione?
         Doloribus sunt recusandae sit explicabo provident quasi porro modi possimus ipsum fugit blanditiis deserunt, debitis distinctio ut qui laudantium quam sequi quae dolor quis libero! Aspernatur aut reiciendis placeat impedit.
         Debitis, quo fugiat voluptates cupiditate officia quasi eaque autem nesciunt atque sunt minus inventore magni eveniet dolor accusantium reiciendis officiis eligendi delectus. Labore enim aperiam placeat animi dolore sed incidunt!"
-        style=""
+        style="no-bg"
       />
     </main>
   );

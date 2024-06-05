@@ -1,6 +1,6 @@
 /* ===== Importes: Fontes ===== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
 
 .header {
     background-color: #010e14;
@@ -8,34 +8,26 @@
     padding: 1rem 0;
     width: 100%;
     min-width: 790px;
-    border-bottom: 1px solid #effbfe;
+    border-bottom: 2px solid #effbfe;
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 75rem;
+    max-width: 80rem;
     margin: auto;
-    padding: 0 0.5rem;
     font-family: 'Roboto', sans-serif;
     white-space: nowrap;
 }
 
 .header .container .logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex: 0.25;
 }
 
-.header .container .logo h1{
-    font-size: 1.25rem;
-}
-
-.header .container .navigation{
-    flex: 0.6;
-    padding: 0 1rem;
+.header .container .logo .blue-logo h1{
+    font-family: 'Sawari Gothic', sans-serif;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 635px){
@@ -44,52 +36,47 @@
     }
 }
 
-.header .container .navigation .links-list{
+.header .container .links-nav{
+    flex: 0.75;
+}
+
+.header .container .links-nav .links-list,
+.header .container .info-nav .info-nav{
     display: flex;
-    height: 6rem;
-    min-width: 283px;
     align-items: center;
 }
 
-.header .container .navigation .links-list li{
+.header .container .links-nav .links-list li{
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.header .container .navigation .links-list li a{
-    border-radius: 0.5rem;
-    width: 7rem;
-    padding: 0.5rem 0;
+.header .container .links-nav .links-list :first-child a{
+    border-left: 1px solid #5897d1;
+}
+
+.header .container .links-nav .links-list li a{
+    flex: 1;
     text-align: center;
-    background-color: #9db5cc;
-    transition: 0.1s;
+    text-transform: uppercase;
+    border-right: 1px solid #5897d1;
 }
 
-.header .container .user-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 7rem;
+.header .container .info-nav{
+    flex: 0.25;
 }
 
 .header .container .user-info a{
-    padding: 0.5rem;
     border-radius: 0.5rem;
-    min-width: 10rem;
-    margin: 0.25rem 0;
+    min-width: 7rem;
+    padding: 0.5rem 0;
     text-align: center;
     transition: 0.1s;
+    background-color: #9db5cc;
 }
 
 .header .container .user-info .sign-in-button{
     background-color: #5897d1;
-}
-
-.header .container .user-info .login-button{
-    background-color: #9db5cc;
 }
 
 .header .container .navigation .links-list li a:hover,

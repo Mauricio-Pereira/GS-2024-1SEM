@@ -27,7 +27,7 @@ const LoginForm = () => {
         event.preventDefault(); // Previne o comportamento padrão de recarga da página
 
         try {
-            const response = await axios.post('InformeOCaminhoAqui', {
+            const response = await axios.post('http://localhost:8082/bluehorizon/login', {
                 email: email,
                 password: password,
             }, {
