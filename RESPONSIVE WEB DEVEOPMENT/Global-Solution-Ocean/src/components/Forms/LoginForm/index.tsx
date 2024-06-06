@@ -38,7 +38,7 @@ const LoginForm = () => {
 
             console.log('Login realizado com sucesso:', response.data);
             localStorage.setItem('clienteEmail', email); // Armazena o email no localStorage
-            window.location.href = '/products'; // Redireciona para outra página após o login bem-sucedido
+            window.location.href = '/'; // Redireciona para outra página após o login bem-sucedido
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 console.error('Erro ao realizar login:', error.response?.data || error.message);

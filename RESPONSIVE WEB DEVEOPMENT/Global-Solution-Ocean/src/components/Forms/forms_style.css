@@ -74,7 +74,12 @@
     flex: 1;
 }
 
+.form form .address-boxes .address-box input{
+    margin: 0.1rem;
+}
+
 .form form .submit-btn{
+    margin-top: 0.5rem;
     border-radius: 0.5rem;
     background-color: #177a80;
     color: white;

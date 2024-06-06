@@ -9,21 +9,21 @@ import "../forms_style.css"
 const SignInForm: React.FC = () => {
   // Estados para cada campo do formulário
   const [formData, setFormData] = useState({
-    nome: '',
-    sobrenome: '',
+    name: '',
+    lastName: '',
     email: '',
     password: '',
-    dataNascimento: '',
+    birthDate: '',
     phone: '',
-    usertype: '',
-    cep: '',
-    rua: '',
-    bairro: '',
-    cidade: '',
-    estado: '',
-    pais: '',
-    numero: '',
-    complemento: ''
+    userType: '',
+    zipCode: '',
+    street: '',
+    neighborhood: '',
+    city: '',
+    state: '',
+    country: '',
+    number: '',
+    complement: ''
   });
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -39,44 +39,33 @@ const SignInForm: React.FC = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-
-    // Formatar data de nascimento no formato dd/MM/yyyy
-    const formattedData = {
-      ...formData,
-      dataNascimento: new Date(formData.dataNascimento).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-      })
-    };
-
-    console.log('Data de nascimento enviada:', formattedData.dataNascimento); // Log para verificar a data
-
+    
     try {
-      const response = await axios.post(`InformeOCaminhoAqui`, {
+      const response = await axios.post(`http://localhost:8082/bluehorizon/users`, formData,{
         headers: {
           'Content-Type': 'application/json',
         },
       });
       console.log('Cliente cadastrado com sucesso:', response.data);
       setSuccessMessage('Cliente cadastrado com sucesso!');
+      window.location.href = '/';
       setErrorMessage('');
       setFormData({
-        nome: '',
-        sobrenome: '',
+        name: '',
+        lastName: '',
         email: '',
         password: '',
-        dataNascimento: '',
+        birthDate: '',
         phone: '',
-        usertype: '',
-        cep: '',
-        rua: '',
-        bairro: '',
-        cidade: '',
-        estado: '',
-        pais: '',
-        numero: '',
-        complemento: ''
+        userType: '',
+        zipCode: '',
+        street: '',
+        neighborhood: '',
+        city: '',
+        state: '',
+        country: '',
+        number: '',
+        complement: ''
       });
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -99,13 +88,13 @@ const SignInForm: React.FC = () => {
             <p>Informe suas informações de usuário</p>
 
             <div className="name-box">
-              <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
-              <input type="text" name="sobrenome" placeholder="Sobrenome" value={formData.sobrenome} onChange={handleChange} />
+              <input type="text" name="name" placeholder="Nome" value={formData.name} onChange={handleChange} />
+              <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleChange} />
             </div>
 
             <div className="date-box">
               <label htmlFor="date">Data de Nasimento</label>
-              <input type="date" name="dataNascimento" id="date" placeholder="Data de Nascimento" value={formData.dataNascimento} onChange={handleChange}/>
+              <input type="date" name="birthDate" id="date" placeholder="Data de Nascimento" value={formData.birthDate} onChange={handleChange}/>
             </div>
 
             <div className="contact-box">
@@ -114,16 +103,16 @@ const SignInForm: React.FC = () => {
             </div>
 
             <div className="usertype-box">
-              <select name="usertype" value={formData.usertype} onChange={handleChange}>
-                <option value="">*Selecione o tipo de usuário*</option>
-                <option value="Comprador">Comprador</option>
-                <option value="Administrador de Empresa">Administrador de Empresa</option>
-                <option value="Administrador de ONG">Administrador de ONG</option>
+              <select name="userType" value={formData.userType} onChange={handleChange}>
+                <option>*Selecione o tipo de usuário*</option>
+                <option value="buyer">Comprador</option>
+                <option value="admin_company">Administrador de Empresa</option>
+                <option value="admin_ngo">Administrador de ONG</option>
               </select>
             </div>
             
             <div className="password-box">
-              <input type="password" name="senha" placeholder="Senha" value={formData.password} onChange={handleChange} />
+              <input type="password" name="password" placeholder="Senha" value={formData.password} onChange={handleChange} />
             </div>
           </div>
 
@@ -131,15 +120,14 @@ const SignInForm: React.FC = () => {
             <p>Informações de Endereço</p>
             
             <div className="address-box">
-              <input type="text" name="cep" placeholder="CEP" value={formData.cep} onChange={handleChange} />
-            
-              <input type="text" name="pais" placeholder="País" value={formData.pais} onChange={handleChange} />
-              <input type="text" name="estado" placeholder="Estado" value={formData.estado} onChange={handleChange} />
-              <input type="text" name="cidade" placeholder="Cidade" value={formData.cidade} onChange={handleChange} />
-              <input type="text" name="bairro" placeholder="Bairro" value={formData.bairro} onChange={handleChange} />
-              <input type="text" name="rua" placeholder="Rua" value={formData.rua} onChange={handleChange} />
-              <input type="text" name="numero" placeholder="Número" value={formData.numero} onChange={handleChange} />
-              <input type="text" name="complemento" placeholder="Complemento" value={formData.complemento} onChange={handleChange} />
+              <input type="text" name="zipCode" placeholder="CEP" value={formData.zipCode} onChange={handleChange} />
+              <input type="text" name="country" placeholder="País" value={formData.country} onChange={handleChange} />
+              <input type="text" name="state" placeholder="Estado" value={formData.state} onChange={handleChange} />
+              <input type="text" name="city" placeholder="Cidade" value={formData.city} onChange={handleChange} />
+              <input type="text" name="neighborhood" placeholder="Bairro" value={formData.neighborhood} onChange={handleChange} />
+              <input type="text" name="street" placeholder="Rua" value={formData.street} onChange={handleChange} />
+              <input type="text" name="number" placeholder="Número" value={formData.number} onChange={handleChange} />
+              <input type="text" name="complement" placeholder="Complemento" value={formData.complement} onChange={handleChange} />
             </div>
           </div>
 
