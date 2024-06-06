@@ -6,6 +6,7 @@ const LoginSection = () => {
         <>
         <section className="section login-section">
             <div className="container">
+                <h1>Faça o seu Login</h1>
                 <LoginForm/>
             </div>
         </section>

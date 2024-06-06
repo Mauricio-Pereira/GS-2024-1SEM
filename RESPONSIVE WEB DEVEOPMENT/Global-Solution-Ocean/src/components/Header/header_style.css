@@ -16,28 +16,24 @@
     justify-content: space-between;
     align-items: center;
     max-width: 80rem;
+    padding: 0 0.5rem;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     white-space: nowrap;
 }
 
-.header .container .logo{
-    flex: 0.25;
-}
 
 .header .container .logo .blue-logo h1{
     font-family: 'Sawari Gothic', sans-serif;
     font-size: 1.5rem;
 }
 
-@media (max-width: 635px){
-    .header .container .navigation{
-        padding: 0 1vw;
-    }
+.header .container .links-nav{
+    flex: 0.65;
 }
 
-.header .container .links-nav{
-    flex: 0.75;
+.header .container .info-nav{
+    flex: 0.15;
 }
 
 .header .container .links-nav .links-list,
@@ -52,27 +48,45 @@
 }
 
 .header .container .links-nav .links-list :first-child a{
-    border-left: 1px solid #5897d1;
+    margin-left: 0;
 }
 
 .header .container .links-nav .links-list li a{
     flex: 1;
     text-align: center;
     text-transform: uppercase;
+    margin-left: 0.5rem;
     border-right: 1px solid #5897d1;
+    border-left: 1px solid #5897d1;
+    border-radius: 1rem;
+    transition: 0.1s;
+    padding: 1rem 0;
 }
 
-.header .container .info-nav{
-    flex: 0.25;
+.header .container .info-nav .info-list li{
+    flex: 1;
+    display: flex;
 }
 
-.header .container .user-info a{
-    border-radius: 0.5rem;
-    min-width: 7rem;
-    padding: 0.5rem 0;
+.header .container .info-nav .info-list :first-child a{
+    margin-bottom: 0.5rem;
+}
+
+.header .container .info-nav .info-list li a{
+    flex: 1;
     text-align: center;
     transition: 0.1s;
-    background-color: #9db5cc;
+    padding: 0.3rem 0;
+    border-top: 1px solid #5897d1;
+    border-bottom: 1px solid #5897d1;
+    border-radius: 1rem;
+}
+
+.header .container .links-nav .links-list li a:hover,
+.header .container .links-nav .links-list li a:focus,
+.header .container .info-nav .info-list li a:hover,
+.header .container .info-nav .info-list li a:focus{
+    background-color: #ffffff2d;
 }
 
 .header .container .user-info .sign-in-button{
