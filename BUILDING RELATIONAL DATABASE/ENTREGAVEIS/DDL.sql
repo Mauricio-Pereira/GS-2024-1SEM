@@ -1,3 +1,6 @@
+--MAURÍCIO VIEIRA PEREIRA - RM553748
+--LUIZ OTÁVIO LEITÃO SILVA - RM553542
+--VITOR ONOFRE RAMOS - RM553241
 
 drop table GS_USERS cascade constraints;
 drop table GS_ADDRESSES cascade constraints;

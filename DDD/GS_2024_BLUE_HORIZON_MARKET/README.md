@@ -100,6 +100,11 @@ O projeto está organizado nas seguintes camadas principais:
 Os endpoints da API podem ser testados usando ferramentas como Postman. Um arquivo de coleção do Postman está incluído no projeto, que contém exemplos de requisições para todos os endpoints.
 
 
+### APIs Externas
+1. API de CEP: [ViaCEP](https://viacep.com.br/)
+2. API de CNPJ: [ReceitaWS](https://www.receitaws.com.br/)  
+Essas APIs são usadas para validar o CEP e CNPJ de endereços e empresas, respectivamente.
+
 
 
 ## Repositório
@@ -109,5 +114,5 @@ Os endpoints da API podem ser testados usando ferramentas como Postman. Um arqui
 
 ## Autores
 - [Mauricio Pereira](https://github.com/Mauricio-Pereira)
-- [Luiz Otávio Leitão](https://github.com/Luiz1614)
+- [Luiz Otávio Leitão Silva](https://github.com/Luiz1614)
 - [Vitor Onofre Ramos](https://github.com/VitorOnofreRamos)
