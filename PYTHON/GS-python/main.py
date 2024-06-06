@@ -72,7 +72,7 @@ def select_producao_global():
     print("\n{:<20} {:<10} {:<30}".format("Entidade", "Ano", "Produção Anual de Plástico"))
     print("-" * 60)
     for row in cursor:
-        print("{:<20} {:<10} {:<30}".format(row[0], row[1], row[2]))
+        print("{:<20} {:<10} {:<30}".format(row[0], row[1], row[2] + "t"))
     cursor.close()
     conn.close()
 
@@ -82,7 +82,7 @@ def select_producao_global_por_ano(ano):
     cursor.execute("SELECT SUM(Producao_Anual_de_Plastico) FROM GS_PRODUCAO_PLASTICO WHERE Ano = :1 GROUP BY Ano", [ano])
     result = cursor.fetchone()
     if result is not None:
-        print(f"Produção Anual de Plástico para o ano {ano}: {result[0]}")
+        print(f"Produção Anual de Plástico para o ano {ano}: {result[0]}" + " Toneladas")
     else:
         print(f"Não foram encontrados dados para o ano {ano}.")
     cursor.close()
@@ -92,10 +92,10 @@ def select_despejo_plastico():
     conn = connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM GS_DESPEJO_DE_PLASTICO")
-    print("\n{:<20} {:<10} {:<30}".format("Entidade", "Ano", "Participação"))
-    print("-" * 60)
+    print("\n{:<30} {:<15} {:<40}".format("Entidade", "Ano", "Participação"))
+    print("-" * 85)
     for row in cursor:
-        print("{:<20} {:<10} {:<30}".format(row[0], row[1], row[2]))
+        print("{:<30} {:<15} {:<40}".format(row[0], row[1], row[2] + "%"))
     cursor.close()
     conn.close()
 
@@ -114,7 +114,7 @@ def select_despejo_plastico_por_pais(pais):
         print(f"Não foram encontrados dados para o país {pais}.")
     else:
         for row in rows:
-            print(f"Entidade: {row[0]}, Ano: {row[1]}, Participação: {row[2]}")
+            print(f"Entidade: {row[0]}, Ano: {row[1]}, Participação: {row[2]}" + "%")
 
     cursor.close()
     conn.close()
