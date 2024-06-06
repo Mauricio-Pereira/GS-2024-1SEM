@@ -1,3 +1,8 @@
+# Luiz Otávio - RM553542
+# Mauricio Pereira - RM553748
+# Vitor Onofre - RM553241
+
+
 import oracledb
 import csv
 from colorama import Fore, Style
