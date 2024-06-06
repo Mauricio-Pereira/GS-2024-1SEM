@@ -65,9 +65,11 @@ public class UserService {
         user.setPhone((String) payload.get("phone"));
         user.setBirthDate(LocalDate.parse((String) payload.get("birthDate")));
 
-        // Salvar o usuário no banco de dados
-        userRepository.create(user);
-        User createdUser = userRepository.findByEmail(user.getEmail());
+        // Validar o usuário
+        Map<Boolean, String> userValidation = user.validate();
+        if (userValidation.containsKey(false)) {
+            throw new IllegalArgumentException("Erro na validação do usuário: " + userValidation.get(false));
+        }
 
         // Criar o endereço
         Address address = new Address();
@@ -79,9 +81,23 @@ public class UserService {
         address.setStreet((String) payload.get("street"));
         address.setNumber((String) payload.get("number"));
         address.setComplement((String) payload.get("complement"));
-        address.setUser(createdUser); // Associar o endereço ao usuário criado
+        address.setUser(user); // Associar o endereço ao usuário criado
+
+        // Validar o endereço
+        Map<Boolean, String> addressValidation = address.validate();
+        if (addressValidation.containsKey(false)) {
+            throw new IllegalArgumentException("Erro na validação do endereço: " + addressValidation.get(false));
+        }
+
+        // Salvar o usuário no banco de dados
+        userRepository.create(user);
+        User createdUser = userRepository.findByEmail(user.getEmail());
+
+        // Atualizar a associação do endereço com o usuário criado
+        address.setUser(createdUser);
 
         // Salvar o endereço no banco de dados
         addressService.create(address, createdUser.getId());
     }
+
 }
