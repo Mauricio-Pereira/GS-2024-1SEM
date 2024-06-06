@@ -14,7 +14,7 @@ export default function ProductsSection() {
         // Função assíncrona para buscar dados da API
         const getDataServer = async () => {
             try {
-                const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+                const response = await fetch("http://localhost:8082/bluehorizon/products");
                 const content = await response.json();
                 setData(content);
             } catch (error) {
@@ -31,9 +31,9 @@ export default function ProductsSection() {
         <section className="section products-section">
             <div className="container">
                 <div className="search-box">
-                    <p>Teste</p>
+                    <label htmlFor="search">Digite o Produto que deseja procurar</label>
                     <input
-                        type="text"
+                        type="text" id="search"
                         placeholder="Pesquisar produto..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
@@ -41,15 +41,15 @@ export default function ProductsSection() {
                 </div>
                 <div className="products-box">
                     {data.filter(item =>
-                        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        item.body.toLowerCase().includes(searchTerm.toLowerCase())
+                        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        item.description.toLowerCase().includes(searchTerm.toLowerCase())
                     ).map((item: Item) => (
                         <Product
-                        key={item.id}
-                        userId={item.userId}
-                        id={item.id}
-                        title={item.title}
-                        body={item.body}
+                            id={item.id}
+                            name={item.name}
+                            description={item.description}
+                            price={item.price}
+                            stock={item.stock}
                         />
                     ))}
                 </div>

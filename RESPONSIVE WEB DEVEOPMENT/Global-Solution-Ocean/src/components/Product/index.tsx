@@ -6,47 +6,28 @@ import Link from "next/link";
 import "./product_style.css";
 import { deflate } from "zlib";
 
-interface ProductProps {
-  title: string;
-  image: string;
-  link: string;
-  price: number;
-}
-
-{/*const Product: React.FC<ProductProps> = ({ title, image, link, price }) => {
+const Product: React.FC<Item> = ({id, description, name, price, stock}) => {
   return (
-    <div className="product-card">
-      <Link className="link-card"
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="product-content">
-          <h2 className="product-title">{title}</h2>
-          <Image className="product-image" src={image} width={200} height={200} alt={"Nome do Produto " + title} />
-          <span className="product-preco">R$ {price}</span>
-        </div>
-      </Link>
-    </div>
-  );
-};
-*/}
-
-const Product: React.FC<Item> = ({id, title, body}) => {
-  return(
-    <div key={id} className="product-card">
+    <div className="product-card" id={id}>
       <Link className="link-card"
         href="#"
         target="_blank"
         rel="noopener noreferrer"
       >
         <div className="product-content">
-          <h2 className="product-title">{title}</h2>
-          <p className="product-description">{body}</p>
+          <h2 className="product-name">{name}</h2>
+          <div className="product-image">
+          </div>
+          <p className="product-description">{description}</p>
+          <div className="product-values">
+            <span className="product-price">R$ {price}</span>
+            <span className="product-stock">{stock} unidades</span>
+          </div>
         </div>
       </Link>
     </div>
-  )
-}
+  );
+};
+
 
 export default Product;

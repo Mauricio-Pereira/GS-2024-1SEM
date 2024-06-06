@@ -1,6 +1,7 @@
 export default interface Item {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
+    id: string;
+    description: string;
+    name: string;
+    price: string;
+    stock: string;
 }

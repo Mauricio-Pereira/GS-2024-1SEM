@@ -8,6 +8,7 @@
     padding: 3rem 0;
     width: 100%;
     min-width: 790px;
+    border-top: 0.15rem solid white;
 }
   
 .footer .container {

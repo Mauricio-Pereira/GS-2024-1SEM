@@ -7,15 +7,9 @@ export default function Home() {
   return (
     <main className="flex home-page">
       <HeaderSection/>
-        <section className="flex border-y-2">
+        <section className="flex flex-row">
         <ParagraphSection 
-          title="Título 1"
-          text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, iusto sit porro neque cumque delectus nulla ratione pariatur vero nostrum ipsam molestiae, nihil at ab consequatur perspiciatis ipsum quidem magni!
-          Itaque cum aspernatur, unde numquam quos magnam! Obcaecati, reprehenderit accusamus quo alias, dignissimos quas repellendus aliquam impedit eligendi, sapiente nisi. Nisi, repellendus aliquid?
-          Laudantium accusamus rem tenetur aperiam ipsam quasi blanditiis at quis illo mollitia odio iure totam molestiae eveniet ea, beatae ut commodi eaque optio. Architecto debitis pariatur temporibus ex id consectetur.
-          Reprehenderit consequuntur voluptatum voluptates dicta numquam odio obcaecati dignissimos pariatur nesciunt, commodi nobis illum laudantium debitis perferendis, laborum fuga expedita. Quam explicabo similique repellendus repudiandae eum asperiores! Explicabo, maxime ratione?
-          Doloribus sunt recusandae sit explicabo provident quasi porro modi possimus ipsum fugit blanditiis deserunt, debitis distinctio ut qui laudantium quam sequi quae dolor quis libero! Aspernatur aut reiciendis placeat impedit.
-          Debitis, quo fugiat voluptates cupiditate officia quasi eaque autem nesciunt atque sunt minus inventore magni eveniet dolor accusantium reiciendis officiis eligendi delectus. Labore enim aperiam placeat animi dolore sed incidunt!"
+          text="Bem-vindo ao Blue Horizon Market, onde o seu poder de compra se torna uma força para a sustentabilidade dos oceanos. Estamos comprometidos em oferecer uma plataforma de e-commerce inovadora que não apenas simplifica suas compras, mas também ajuda a preservar nosso precioso ecossistema marinho. Junte-se a nós nessa jornada para um futuro mais verde e próspero."
           style="no-bg"
         />
         <ImageSection
