@@ -1,11 +1,13 @@
 import ParagraphSection from "@/components/Sections/ParagraphSection";
-import SingInSection from "@/components/Sections/SignInSection";
+import ProductsSection from "@/components/Sections/ProductsSection";
 import Image from "next/image";
 
-export default function SignInPage() {
+export default function Products() {
   return (
     <main className="flex">
-      <SingInSection/>
+      <ParagraphSection
+      text="Ongs"
+      />
     </main>
   );
 }

@@ -73,7 +73,7 @@ public class UserService {
 
         // Criar o endereço
         Address address = new Address();
-        address.setZipCode((String) payload.get("cep"));
+        address.setZipCode((String) payload.get("zipCode"));
         address.setCountry((String) payload.get("country"));
         address.setState((String) payload.get("state"));
         address.setCity((String) payload.get("city"));
