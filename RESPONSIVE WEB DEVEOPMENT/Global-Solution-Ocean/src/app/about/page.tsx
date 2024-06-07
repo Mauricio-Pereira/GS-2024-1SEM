@@ -26,6 +26,7 @@ export default function About() {
           alt="Logo.png"
           width={100}
           height={100}
+          style="no-bg"
         />
         <ParagraphSection
           title="Nossos Compromissos"

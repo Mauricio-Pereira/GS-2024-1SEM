@@ -1,0 +1,15 @@
+/*SignInSection*/
+
+.sign-in-section{
+    padding: 2rem 0rem;
+    background-color: #fffdf6;
+}
+
+.sign-in-section .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 75rem;
+    margin: auto;
+}

@@ -1,5 +1,6 @@
 import LoginForm from '@/components/Forms/LoginForm';
 import '../sections_style.css';
+import './loginSection_style.css';
 
 const LoginSection = () => {
     return(

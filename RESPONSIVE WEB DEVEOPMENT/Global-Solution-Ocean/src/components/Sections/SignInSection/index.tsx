@@ -1,5 +1,6 @@
 import SignInForm from '@/components/Forms/SignInForm';
 import '../sections_style.css';
+import './signInSection_style.css';
 
 const SingInSection = () => {
     return(

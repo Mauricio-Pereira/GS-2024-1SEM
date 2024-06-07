@@ -13,10 +13,11 @@ export default function Home() {
           style="no-bg"
         />
         <ImageSection
-          src="/images/Logo.png"
+          src="/img/effects.png"
           alt="Logo.png"
           width={100}
           height={100}
+          style="no-bg"
         />
         </section>
     </main>

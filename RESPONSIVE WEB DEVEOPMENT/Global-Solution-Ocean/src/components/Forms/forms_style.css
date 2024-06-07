@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
 .form{
-    background-color: #001718;
+    background-color: #010e14;
     border-radius: 0.25rem;
     margin: auto;
     max-width: 65rem;
@@ -38,16 +38,14 @@
     flex-direction: column;
 }
 
-.form form .user-boxes div,
-.form form .address-boxes div{
+.form form .user-boxes div{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .form form .user-boxes .name-box,
-.form form .user-boxes .contact-box,
-.form form .address-boxes .address-box{
+.form form .user-boxes .contact-box{
     display: flex;
     justify-content: space-between;
 }
@@ -55,11 +53,6 @@
 .login-form form .email-box,
 .login-form form .password-box{
     display: flex;
-}
-
-.form form .user-boxes .date-box,
-.login-form form .email-box,
-.login-form form .password-box{
     flex-direction: column;
 }
 
@@ -72,6 +65,12 @@
 .form form .user-boxes .usertype-box select,
 .form form .user-boxes .password-box input{
     flex: 1;
+}
+
+.form form .address-boxes .address-box{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto auto;
 }
 
 .form form .address-boxes .address-box input{

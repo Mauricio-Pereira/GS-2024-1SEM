@@ -1,0 +1,39 @@
+
+
+/*ImageSection*/
+
+.image-section{
+    justify-content: center;
+    background-color: #fffdf6;
+}
+
+.image-section .container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section .container .img{
+    height: auto;
+    width: auto;
+}
+
+.no-img{
+    background-image: url('/img/background-jelly2.png');
+    background-position: left;
+    background-size: cover;
+}
+
+.no-img .container{
+    display: none;
+}
+
+.no-img .container .img{
+    display: none;
+}
+
+.no-bg{
+    background-color: #00000000;
+    color: white;
+}
