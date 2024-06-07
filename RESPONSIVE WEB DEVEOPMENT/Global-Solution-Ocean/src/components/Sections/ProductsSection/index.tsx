@@ -46,6 +46,7 @@ export default function ProductsSection() {
                         item.description.toLowerCase().includes(searchTerm.toLowerCase())
                     ).map((item: Item) => (
                         <Product
+                            key={item.id}
                             id={item.id}
                             name={item.name}
                             description={item.description}
