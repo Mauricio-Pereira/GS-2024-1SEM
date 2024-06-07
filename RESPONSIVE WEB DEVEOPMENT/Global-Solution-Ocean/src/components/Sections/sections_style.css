@@ -8,9 +8,3 @@
     width: 100%;
     font-family: 'Sawari Gothic', sans-serif;
 }
-
-@media (max-width: 810px){
-    .section{
-        padding: 0 5vw;
-    }
-}

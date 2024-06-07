@@ -114,3 +114,9 @@
 .header .container .user-info .login-button:focus{
     background-color: #74ce5e;
 }
+
+@media (max-width: 800){
+    .header{
+        justify-content: left;
+    }
+}

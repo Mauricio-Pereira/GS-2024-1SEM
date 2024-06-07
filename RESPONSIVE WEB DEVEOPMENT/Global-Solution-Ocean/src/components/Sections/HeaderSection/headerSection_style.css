@@ -36,6 +36,7 @@
 
 .header-section .container .buttons{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-top: 0.5rem;
@@ -63,4 +64,10 @@
 .header-section .container .buttons .login-button:hover,
 .header-section .container .buttons .login-button:focus{
     background-color: #74ce5e;
+}
+
+@media (max-width: 770px){
+    .header-section .container .buttons .sign-in-button{
+        margin-bottom: 1rem;
+    }
 }
