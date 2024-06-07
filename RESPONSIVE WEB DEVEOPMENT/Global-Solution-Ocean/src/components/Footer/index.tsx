@@ -26,7 +26,7 @@ const Footer = () => {
             <ul>
               <li><a href="https://github.com/VitorOnofreRamos">Vitor Onofre Ramos - RM553241</a></li>
               <li><a href="https://github.com/Mauricio-Pereira">Mauricio Vieira Pereira - RM553748</a></li>
-              <li><a href="https://github.com/Luiz1614">Luiz Otávio Leitão - RM553542</a></li>
+              <li><a href="https://github.com/Luiz1614">Luiz Otávio Leitão Silva - RM553542</a></li>
             </ul>
           </div>
         </div>
