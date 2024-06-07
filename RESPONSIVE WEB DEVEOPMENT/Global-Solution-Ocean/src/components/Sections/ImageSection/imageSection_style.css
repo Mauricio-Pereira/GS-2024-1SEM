@@ -3,6 +3,7 @@
 /*ImageSection*/
 
 .image-section{
+    flex: 1;
     justify-content: center;
     background-color: #fffdf6;
 }

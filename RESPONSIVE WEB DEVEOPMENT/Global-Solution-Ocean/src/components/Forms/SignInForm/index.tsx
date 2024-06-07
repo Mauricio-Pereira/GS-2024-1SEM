@@ -37,8 +37,26 @@ const SignInForm: React.FC = () => {
     }));
   };
 
+  const validatePassword = (password: string) => {
+    const hasUpperCase = /(?=.*[A-Z])/;
+    const hasLowerCase = /(?=.*[a-z])/;
+    const hasSpecialChar = /(?=.*[@$#%^&+=])/;
+    const minLength = /.{9,}/;
+  
+    if (!hasUpperCase.test(password) ||!hasLowerCase.test(password) ||!hasSpecialChar.test(password) ||!minLength.test(password)) {
+      return false; // Retorna falso se alguma condição não for atendida
+    }
+  
+    return true; // Retorna verdadeiro se todas as condições forem atendidas
+  };
+
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+
+    if (!validatePassword(formData.password)) {
+      setErrorMessage("A senha deve ter pelo menos 9 dígitos, incluindo uma letra maiúscula, uma letra minúscula e um caractere especial.");
+      return; // Interrompe a execução se a senha não passar na validação
+    }
     
     try {
       const response = await axios.post(`http://localhost:8082/bluehorizon/users`, formData,{

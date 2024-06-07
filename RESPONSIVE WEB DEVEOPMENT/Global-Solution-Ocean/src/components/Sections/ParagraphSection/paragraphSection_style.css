@@ -15,9 +15,19 @@
     padding: 0 0.75rem;
 }
 
-.paragraph-section .container p{
+.paragraph-section .container p,
+.paragraph-section .container h1{
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
+}
+
+.paragraph-section .container p{
+    font-size: 1rem;
+}
+
+.paragraph-section .container h1{
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .no-bg{

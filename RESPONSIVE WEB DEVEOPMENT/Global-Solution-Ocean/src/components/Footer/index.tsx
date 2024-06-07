@@ -16,9 +16,17 @@ const Footer = () => {
             <h2>Links Úteis</h2>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/">Produtos</Link></li>
-              <li><Link href="/">Ongs</Link></li>
-              <li><Link href="/">Sobre Nós</Link></li>
+              <li><Link href="/products">Produtos</Link></li>
+              <li><Link href="/ongs">Ongs</Link></li>
+              <li><Link href="/about">Sobre Nós</Link></li>
+            </ul>
+          </div>
+          <div className="useful-links">
+            <h2>Integrantes</h2>
+            <ul>
+              <li><a href="https://github.com/VitorOnofreRamos">Vitor Onofre Ramos - RM553241</a></li>
+              <li><a href="https://github.com/Mauricio-Pereira">Mauricio Vieira Pereira - RM553748</a></li>
+              <li><a href="https://github.com/Luiz1614">Luiz Otávio Leitão - RM553542</a></li>
             </ul>
           </div>
         </div>

@@ -13,3 +13,9 @@
     max-width: 75rem;
     margin: auto;
 }
+
+.sign-in-section .container h1{
+    font-weight: bolder;
+    font-family: 'Sawari Gothic', sans-serif;
+    margin-bottom: 1rem;
+}

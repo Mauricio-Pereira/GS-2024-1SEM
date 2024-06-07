@@ -7,7 +7,6 @@
     color: white;
     padding: 1rem 0;
     width: 100%;
-    min-width: 790px;
     border-bottom: 2px solid #effbfe;
 }
 
@@ -22,10 +21,13 @@
     white-space: nowrap;
 }
 
+.header .container .logo .blue-logo{
+    display: flex;
+    justify-content: center;
+}
 
-.header .container .logo .blue-logo h1{
-    font-family: 'Sawari Gothic', sans-serif;
-    font-size: 1.5rem;
+.header .container .logo{
+    flex: 0.15;
 }
 
 .header .container .links-nav{
@@ -42,9 +44,20 @@
     align-items: center;
 }
 
+.header .container .links-nav .links-list{
+    flex-wrap: wrap;
+}
+
+@media(max-width: 940px){
+    .header .container .links-nav .links-list :last-child{
+        margin-left: 0;
+    }
+}
+
 .header .container .links-nav .links-list li{
     flex: 1;
     display: flex;
+    min-width: 149px;
 }
 
 .header .container .links-nav .links-list :first-child a{

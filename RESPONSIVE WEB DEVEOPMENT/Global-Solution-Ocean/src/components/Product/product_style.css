@@ -1,7 +1,6 @@
 .product-card{
     display: flex;
     background-color: #010e14;
-    max-width: 287.75px;
 }
 
 .product-card .link-card{

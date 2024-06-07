@@ -9,13 +9,15 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <Link href="/" className="blue-logo"><h1>Blue Horizon</h1></Link>
+          <Link href="/" className="blue-logo">
+            <Image src="/img/Logo.png" alt="Logo.png" width={100} height={100}/>
+          </Link>
         </div>
         <nav className="links-nav">
           <ul className="links-list">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/products">Produtos</Link></li>
-            <li><Link href="/ongs">ONG's</Link></li>
+            <li><Link href="/ongs">ONG's & Parceiros</Link></li>
             <li><Link href="/about">Sobre</Link></li>
           </ul>
         </nav>
