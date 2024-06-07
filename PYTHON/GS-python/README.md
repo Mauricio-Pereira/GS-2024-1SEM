@@ -19,6 +19,7 @@ Este projeto é uma aplicação Python que interage com um banco de dados Oracle
 
 1. Clone o repositório para sua máquina local.
 2. Instale as bibliotecas Python necessárias usando pip
+3. Rode o arquivo FIAP.sql no seu banco de dados Oracle para criar a tabela necessária.
 
 ## Integrantes
  Luiz Otávio - RM553542  
