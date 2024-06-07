@@ -37,8 +37,26 @@ const SignInForm: React.FC = () => {
     }));
   };
 
+  const validatePassword = (password: string) => {
+    const hasUpperCase = /(?=.*[A-Z])/;
+    const hasLowerCase = /(?=.*[a-z])/;
+    const hasSpecialChar = /(?=.*[@$#%^&+=])/;
+    const minLength = /.{9,}/;
+  
+    if (!hasUpperCase.test(password) ||!hasLowerCase.test(password) ||!hasSpecialChar.test(password) ||!minLength.test(password)) {
+      return false; // Retorna falso se alguma condição não for atendida
+    }
+  
+    return true; // Retorna verdadeiro se todas as condições forem atendidas
+  };
+
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+
+    if (!validatePassword(formData.password)) {
+      setErrorMessage("A senha deve ter pelo menos 9 dígitos, incluindo uma letra maiúscula, uma letra minúscula e um caractere especial.");
+      return; // Interrompe a execução se a senha não passar na validação
+    }
     
     try {
       const response = await axios.post(`http://localhost:8082/bluehorizon/users`, formData,{
@@ -48,7 +66,7 @@ const SignInForm: React.FC = () => {
       });
       console.log('Cliente cadastrado com sucesso:', response.data);
       setSuccessMessage('Cliente cadastrado com sucesso!');
-      window.location.href = '/';
+      window.location.href = '/login-page';
       setErrorMessage('');
       setFormData({
         name: '',
@@ -87,23 +105,26 @@ const SignInForm: React.FC = () => {
           <div className="user-boxes">
             <p>Informe suas informações de usuário</p>
 
+            <label htmlFor="name">Nome e Sobrenome</label>
             <div className="name-box">
-              <input type="text" name="name" placeholder="Nome" value={formData.name} onChange={handleChange} />
+              <input type="text" name="name" id="name" placeholder="Nome" value={formData.name} onChange={handleChange} />
               <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleChange} />
             </div>
 
+            <label htmlFor="date">Data de Nasimento</label>
             <div className="date-box">
-              <label htmlFor="date">Data de Nasimento</label>
               <input type="date" name="birthDate" id="date" placeholder="Data de Nascimento" value={formData.birthDate} onChange={handleChange}/>
             </div>
 
+            <label htmlFor="email">Informações de Contato</label>
             <div className="contact-box">
-              <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+              <input type="email" name="email" id="email" placeholder="Email" value={formData.email} onChange={handleChange} />
               <input type="phone" name="phone" placeholder="Telefone" value={formData.phone} onChange={handleChange}/>
             </div>
 
+            <label htmlFor="userType">Tipo de usuário</label>
             <div className="usertype-box">
-              <select name="userType" value={formData.userType} onChange={handleChange}>
+              <select name="userType" id="userType" value={formData.userType} onChange={handleChange}>
                 <option>*Selecione o tipo de usuário*</option>
                 <option value="buyer">Comprador</option>
                 <option value="admin_company">Administrador de Empresa</option>
@@ -111,8 +132,9 @@ const SignInForm: React.FC = () => {
               </select>
             </div>
             
+            <label htmlFor="password">Senha</label>
             <div className="password-box">
-              <input type="password" name="password" placeholder="Senha" value={formData.password} onChange={handleChange} />
+              <input type="password" name="password" id="password" placeholder="Senha" value={formData.password} onChange={handleChange} />
             </div>
           </div>
 

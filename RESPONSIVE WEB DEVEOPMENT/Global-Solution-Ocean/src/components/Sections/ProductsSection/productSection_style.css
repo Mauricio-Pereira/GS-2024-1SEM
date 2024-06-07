@@ -1,0 +1,31 @@
+/*ProductsSection*/
+
+.products-section{
+    justify-content: center;
+    background-color: #fffdf6;
+    padding: 2rem 0.5rem;
+}
+
+.products-section .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+    max-width: 75rem;
+    margin: auto;
+}
+
+.products-section .container .search-box{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.products-section .container .products-box{
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto auto auto;
+}

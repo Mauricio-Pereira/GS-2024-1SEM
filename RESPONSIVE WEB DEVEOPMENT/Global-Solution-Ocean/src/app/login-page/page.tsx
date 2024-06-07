@@ -7,11 +7,11 @@ export default function LoginPage() {
   return (
     <main className="flex flex-row">
       <ImageSection
-        src="/images/Logo.png"
+        src="/img/background-fish1.png"
         alt="Logo.png"
         width={100}
         height={100}
-        style=""
+        style="no-img"
       />
       <LoginSection/>
     </main>

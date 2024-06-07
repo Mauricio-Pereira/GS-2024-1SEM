@@ -7,7 +7,6 @@
     color: white;
     padding: 3rem 0;
     width: 100%;
-    min-width: 790px;
     border-top: 0.15rem solid white;
 }
   
@@ -29,15 +28,25 @@
 }
 
 .footer .container .boxes .site-info{
-    width: 20%;
+    flex: 0.50;
+}
+
+.footer .container .boxes .site-info p{
+    text-align: justify;
+    font-size: 0.75rem;
 }
 
 .footer .container .boxes .useful-links{
-    width: 20%;
+    flex: 0.20;
 }
 
-.footer .container .boxes .social-media{
-    width: 20%;
+.footer .container .boxes .useful-links ul li a{
+    font-size: 0.85rem;
+}
+
+.footer .container .boxes .useful-links ul li a:hover,
+.footer .container .boxes .useful-links ul li a:focus{
+    text-decoration: 1px underline
 }
 
 .footer .container .boxes .copyright{

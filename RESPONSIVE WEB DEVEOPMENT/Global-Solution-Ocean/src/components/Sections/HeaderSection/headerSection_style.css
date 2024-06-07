@@ -1,0 +1,66 @@
+/*HeaderSection*/
+
+.header-section{
+    flex: 1;
+    justify-content: center;
+    background-color: #1a1a1b;
+    padding: 10rem 0;
+    height: 30rem;
+    background-image: url('/img/background-jelly1.png');
+    background-position: center;
+    background-size: cover;
+    border-bottom: 0.15rem solid white;
+}
+
+.header-section .container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+    padding: 2rem;
+    color: white;
+}
+
+.header-section .container .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 1rem;
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.header-section .container .title h1{
+    font-size: 3rem;
+}
+
+.header-section .container .buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 50%;
+}
+
+.header-section .container .buttons a{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+    text-align: center;
+    transition: 0.1s;
+}
+
+.header-section .container .buttons .sign-in-button{
+    background-color: #177a80;
+}
+
+.header-section .container .buttons .login-button{
+    background-color: #81a8cc;
+}
+
+.header-section .container .buttons .sign-in-button:hover,
+.header-section .container .buttons .sign-in-button:focus,
+.header-section .container .buttons .login-button:hover,
+.header-section .container .buttons .login-button:focus{
+    background-color: #74ce5e;
+}

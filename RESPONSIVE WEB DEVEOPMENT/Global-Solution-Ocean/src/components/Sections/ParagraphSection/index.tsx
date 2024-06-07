@@ -1,5 +1,6 @@
 import { ParagraphSectionProps} from "./interface";
 import '../sections_style.css';
+import './paragraphSection_style.css';
 
 const ParagraphSection = (props: ParagraphSectionProps) => {
     return(

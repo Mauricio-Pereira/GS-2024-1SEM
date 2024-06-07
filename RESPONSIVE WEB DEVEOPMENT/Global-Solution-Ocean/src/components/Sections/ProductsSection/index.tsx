@@ -3,6 +3,7 @@
 import {useState, useEffect} from "react";
 import Product from '@/components/Product';
 import '../sections_style.css';
+import './productSection_style.css';
 
 import Item from "./interface";
 

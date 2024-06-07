@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import '../sections_style.css';
+import './headerSection_style.css'
 
 const HeaderSection = () => {
     return(

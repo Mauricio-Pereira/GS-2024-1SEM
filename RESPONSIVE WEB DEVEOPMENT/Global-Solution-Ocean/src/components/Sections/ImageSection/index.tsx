@@ -1,7 +1,7 @@
-
 import Image from "next/image";
 import { ImgSectionProps} from "./interface";
 import '../sections_style.css';
+import './imageSection_style.css';
 
 const ImageSection = (props: ImgSectionProps) => {
     return(

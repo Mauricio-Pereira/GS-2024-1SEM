@@ -10,22 +10,23 @@ const Footer = () => {
         <div className="boxes">
           <div className="site-info">
             <h2>Sobre Nós</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc nec tincidunt interdum, justo quam cursus mi.</p>
+            <p>Na BlueCommerce Tech, acreditamos que o comércio online pode ser mais do que uma transação simples - pode ser uma oportunidade para fazer a diferença. Com a Blue Horizon Market, buscamos unir consumidores conscientes e empresas comprometidas com a sustentabilidade. Nosso objetivo é criar um ambiente onde cada compra conte uma história de impacto positivo, desde a redução do plástico nos oceanos até o apoio às comunidades costeiras.</p>
           </div>
           <div className="useful-links">
             <h2>Links Úteis</h2>
             <ul>
-              <li><Link href="/">Link 1</Link></li>
-              <li><Link href="/">Link 2</Link></li>
-              <li><Link href="/">Link 3</Link></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/products">Produtos</Link></li>
+              <li><Link href="/ongs">Ongs</Link></li>
+              <li><Link href="/about">Sobre Nós</Link></li>
             </ul>
           </div>
-          <div className="social-media">
-            <h2>Redes Sociais</h2>
+          <div className="useful-links">
+            <h2>Integrantes</h2>
             <ul>
-              <li><a href="#"><i className="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-              <li><a href="#"><i className="fab fa-twitter"></i><span>Twiter</span></a></li>
-              <li><a href="#"><i className="fab fa-instagram"></i><span>Intagram</span></a></li>
+              <li><a href="https://github.com/VitorOnofreRamos">Vitor Onofre Ramos - RM553241</a></li>
+              <li><a href="https://github.com/Mauricio-Pereira">Mauricio Vieira Pereira - RM553748</a></li>
+              <li><a href="https://github.com/Luiz1614">Luiz Otávio Leitão - RM553542</a></li>
             </ul>
           </div>
         </div>
